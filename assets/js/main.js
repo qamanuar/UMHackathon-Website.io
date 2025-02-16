@@ -96,7 +96,7 @@ let hr_dot = document.querySelector('.hr_dot');
 let min_dot = document.querySelector('.min_dot');
 let sec_dot = document.querySelector('.sec_dot');
 
-let endDate = '03/30/2024, 00:00:00';
+let endDate = '04/05/2025, 00:00:00';
 // date format: mm/dd/yy
 
 let x = setInterval(function () {
