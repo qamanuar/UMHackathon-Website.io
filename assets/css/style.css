@@ -974,7 +974,13 @@ span.text {
   line-height: 1.5;
   font-weight: 400;
   color: white;
-  background: linear-gradient(to top, #6060ff 0%, #030068 100%);
+  background: linear-gradient(0deg, 
+            rgba(0,0,0,1) 20%, 
+            rgba(67,103,255,1) 35%, 
+            rgba(144,179,231,1) 50%, 
+            rgba(67,103,255,1) 65%, 
+            rgba(0,0,0,1) 
+            80%);
 }
 
 .line_section {
@@ -1006,60 +1012,22 @@ span.text {
   background-color: #fff;
   box-shadow: 0 0 10px #fff;
   transform: translateX(-50%);
-}
-
-.bead_end {
   left: 50%;
   top: 20%;
-}
-
-.bead_start {
-  left: calc(40% + 1rem);
-  top: 20%;
-}
-
-.line_section:nth-child(odd) .bead_start {
-  left: calc(60% - 1rem);
-}
-
-.dotted_line {
-  position: absolute;
-  border: none;
-  border-top: 5px dotted #fff;
-  background: transparent;
-
-  height: 0;
-  width: calc(10% - 1rem);
-  top: -25%;
-  right: 50%;
-}
-
-.line_section:nth-child(odd) .dotted_line {
-  left: 50%;
-}
-
-.long_content .dotted_line {
-  top: calc(-10% + 0.25rem);
-}
-
-.content8 .dotted_line{
-  top: calc(-10% - 0.75rem);
 }
 
 .content {
   /* transform: translateY(-80%); */
   width: calc(50%-2rem);
   word-wrap: break-word;
-}
-
-.content_title {
-  display: flex;
+  text-align: center;
 }
 
 .long_content {
   word-wrap: break-word;
   /* transform: translateY(-50%); */
   width: calc(50%-2rem);
+  text-align: center;
 }
 
 .long_content h2 {
@@ -1088,13 +1056,9 @@ span.text {
   margin: 0 auto;
 }
 
-#timeline-logo {
-  width: 70%;
-}
-
 .top-section h1 {
   color: #fff;
-  text-shadow: 0 0 5px #fff;;
+  text-shadow: 0 0 10px #fff;;
 }
 
 .timeline {
@@ -1143,9 +1107,6 @@ span.text {
 
 /* responsive page for timeline for medium screen */
 @media screen and (max-width: 900px) {
-  .dotted_line {
-    top: calc(-25% - 0.25rem);
-  }
   /* count down sector */
   .count_down {
     display: grid;
@@ -1176,18 +1137,6 @@ span.text {
   }
   .line_section h2{
     font-size: 0.8rem;
-  }
-  .dotted_line {
-    top: calc(-25% - 0.75rem);
-  }
-  .long_content .dotted_line {
-    top: calc(-25% - 0.25rem);
-  }
-  .content3 .dotted_line {
-    top: calc(-25% - 0.25rem);
-  }
-  .content7 .dotted_line {
-    top: calc(-25% + 0.75rem);
   }
   /* count down sector */
   .count_down {
