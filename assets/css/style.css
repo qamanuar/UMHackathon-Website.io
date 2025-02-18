@@ -974,7 +974,13 @@ span.text {
   line-height: 1.5;
   font-weight: 400;
   color: white;
-  background: linear-gradient(to top, #6060ff 0%, #030068 100%);
+  background: linear-gradient(0deg, 
+            rgba(0,0,0,1) 20%, 
+            rgba(67,103,255,1) 35%, 
+            rgba(144,179,231,1) 50%, 
+            rgba(67,103,255,1) 65%, 
+            rgba(0,0,0,1) 
+            80%);
 }
 
 .line_section {
@@ -1038,18 +1044,19 @@ span.text {
   left: 50%;
 }
 
-.long_content .dotted_line {
-  top: calc(-10% + 0.25rem);
+.content7 .dotted_line {
+  top: calc(-10% + 1rem);
 }
 
 .content8 .dotted_line{
-  top: calc(-10% - 0.75rem);
+  top: calc(-10% - 0.5rem);
 }
 
 .content {
   /* transform: translateY(-80%); */
   width: calc(50%-2rem);
   word-wrap: break-word;
+  text-align: center;
 }
 
 .content_title {
@@ -1060,6 +1067,7 @@ span.text {
   word-wrap: break-word;
   /* transform: translateY(-50%); */
   width: calc(50%-2rem);
+  text-align: center;
 }
 
 .long_content h2 {
@@ -1184,10 +1192,13 @@ span.text {
     top: calc(-25% - 0.25rem);
   }
   .content3 .dotted_line {
-    top: calc(-25% - 0.25rem);
+    top: calc(-25% - 0.75rem);
   }
   .content7 .dotted_line {
-    top: calc(-25% + 0.75rem);
+    top: calc(-15% + 0.75rem);
+  }
+  .content8 .dotted_line {
+    top: calc(-25% + 0.25rem);
   }
   /* count down sector */
   .count_down {
