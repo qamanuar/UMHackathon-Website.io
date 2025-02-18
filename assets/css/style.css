@@ -137,7 +137,7 @@ img {
 
 /* scroll-header */
 .scroll-header {
-  /*box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);*/
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 }
 
 /*  =================== 
@@ -505,8 +505,7 @@ img {
 }
 /*===================================== ABOUTUS SECTION =====================================*/
 .aboutus-section {
-  background: linear-gradient(to bottom, #06104F, #381454, #32176C);
-  color: white;
+  color: #000000;
   padding-top: 5rem;
   padding-bottom: 4.5rem;
 }
@@ -548,48 +547,51 @@ img {
 .objective-textbox1 {
   box-sizing: border-box;
   width: 80%;
+  background: linear-gradient(to right, #90b3ef, #4367ff);
   padding: 20px 60px 20px 40px;
-  border: 3px solid #FFEC83;
-  border-radius: 0px 50px;
+  border: 3px solid #4367ff;
+  border-radius: 10px;
   margin: 10px;
   transition: all 0.5s ease;
 }
 
 .objective-textbox1:hover {
   transform: scale(1.1);
-  box-shadow: 0px 0px 10px #F6F7A9;
+  box-shadow: 0px 0px 10px #90b3ef;
 }
 
 
 .objective-textbox2 {
   box-sizing: border-box;
   width: 80%;
+  background: linear-gradient(to right, #90b3ef, #4367ff);
   padding: 20px 60px 20px 40px;
-  border: 3px solid #FFEC83;
-  border-radius: 0px 50px;
+  border: 3px solid #4367ff;
+  border-radius: 10px;
   margin: 10px;
   transition: all 0.5s ease;
 }
 
 .objective-textbox2:hover {
   transform: scale(1.1);
-  box-shadow: 0px 0px 10px #F6F7A9;
+  box-shadow: 0px 0px 10px #90b3ef;
 }
 
 
 .objective-textbox3 {
   box-sizing: border-box;
   width: 80%;
+  background: linear-gradient(to right, #90b3ef, #4367ff);
   padding: 20px 60px 20px 40px;
-  border: 3px solid #FFEC83;
-  border-radius: 0px 50px;
+  border: 3px solid #4367ff;
+  border-radius: 10px;
   margin: 10px;
   transition: all 0.5s ease;
 }
 
 .objective-textbox3:hover {
   transform: scale(1.1);
-  box-shadow: 0px 0px 10px #F6F7A9;
+  box-shadow: 0px 0px 10px #90b3ef;
 }
 
 
@@ -615,6 +617,7 @@ img {
   justify-content: center;
   align-items: center;
 }
+
 
 @media only screen and (max-width: 575.5px) {
   .objective-container {
@@ -697,6 +700,47 @@ img {
       transition: all 0.5s ease;
     }
   }
+  @media only screen and (max-width: 975.5px){
+    .background-elements {
+      position: relative;
+    }
+    
+    .curve-star {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+      height: auto;
+      z-index: -1; 
+    }
+    
+    .top-left-doodle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: auto;
+      z-index: -1;
+    }
+    
+    .bottom-right-doodle {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 150px;
+      height: auto;
+      z-index: -1;
+    }        
+  }
+  @media only screen and (max-width: 100px) {
+    .bulb-icon {
+      position: absolute;
+      top: -10px; 
+      right: 10px; 
+      width: 40px; 
+      height: auto;
+    }
+  }  
 }
 /* ==================================== OVERVIEW SECTION ==================================== */
 
@@ -974,6 +1018,10 @@ span.text {
   line-height: 1.5;
   font-weight: 400;
   color: white;
+
+  background: linear-gradient(to top, #c5047e 0%, #5f00dc 100%);
+   
+
   background: linear-gradient(0deg, 
             rgba(0,0,0,1) 20%, 
             rgba(67,103,255,1) 35%, 
@@ -981,6 +1029,7 @@ span.text {
             rgba(67,103,255,1) 65%, 
             rgba(0,0,0,1) 
             80%);
+
 }
 
 .line_section {
