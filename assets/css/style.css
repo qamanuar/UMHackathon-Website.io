@@ -229,7 +229,7 @@ img {
     }
     
     .nav-item a:hover {
-      color: rgb(255, 243, 9);
+      color: rgb(117, 99, 189);
     }
     
     .navbar {
@@ -238,11 +238,11 @@ img {
     }
     
     .navbar-toggler {
-      background-color: rgb(255, 255, 255);
+      background-color: #010101;
     }
     
     .navbar-toggler:hover {
-      color: rgb(255, 243, 9);
+      color: rgb(117, 99, 189);
     }
 
 /*===================================== HOMEPAGE SECTION =====================================*/
