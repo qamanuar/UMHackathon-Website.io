@@ -673,9 +673,9 @@ img {
 }
 
 .design-container.purple-blur-bottom-right { 
-  position: relative;   
-  width: 50rem;
-  height: 3rem;
+  position: absolute;   
+  width: 80rem;
+  height: 2rem;
   z-index: 0;
 }
 
@@ -686,14 +686,14 @@ img {
 }
 
 .design-container.purple-blur-bottom-right img {
-  width: 100%;
+  width: 200%;
   height: auto;
   display: block;
 }
 
 .purple-blur-bottom-right {
-  bottom: 20rem;
-  right: -25rem;
+  bottom: 50rem;
+  right: -10rem;
 }
 @media only screen and (max-width: 1024px) {
   .small-bulb-icon {
