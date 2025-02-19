@@ -199,73 +199,58 @@ img {
     HEADER Section 
     ===================  */
 
-    .container-xxl{
+    .container-xxl {
       background-color: #06114F;
       position: fixed;
       padding-bottom: 0px;
       padding-top: 50px;
       padding-left: 0px;
       padding-right: 0px;
-     
+    }
+    
+    #navigation-logo {
+      width: 2in;
+      transform-origin: left top;
+      transform: scale(1.5);
+      padding-bottom: 15px;
+    }
+    
+    @media screen and (max-width: 767.5px) {
+      #main-nav {
+        padding-bottom: var(--mb-1);
+      }
+    }
+    
+    .nav-item a {
+      font-family: var(--body-font--);
+      font-weight: bold;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    
+    .nav-item a:hover {
+      color: rgb(255, 243, 9);
+    }
+    
+    .navbar {
+      background-color: #000000 !important;
+      z-index: 1000; /* Ensure navbar stays on top */
+    }
+    
+    .navbar-toggler {
+      background-color: rgb(255, 255, 255);
+    }
+    
+    .navbar-toggler:hover {
+      color: rgb(255, 243, 9);
     }
 
-
-
-
-
-#navigation-logo {
-  width: 2in;
-  transform-origin: left top;
-  transform: scale(1.5);
-  padding-bottom: 15px;
-}
-
-@media screen and (max-width: 767.5px) {
-  #main-nav {
-    padding-bottom: var(--mb-1);
-   
-  }
-}
-
-.nav-item a {
-  font-family: var(--body-font--);
-  font-weight: bold;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-.nav-item a:hover {
-  color: rgb(255, 243, 9);
-}
-
-
-
-
-.navbar-toggler{
-  background-color: rgb(255, 255, 255);
-}
-
-.navbar-toggler:hover{
-
-  color: rgb(255, 243, 9);
-}
-
 /*===================================== HOMEPAGE SECTION =====================================*/
+
 #home {
   background: linear-gradient(to right, black 15%, #333a66 65%, #5f82f8 100%);
   color: white; /* Ensures text remains readable */
 }
-
-.design-container.purple-blur-bottom-left {      
-  position: relative; 
-  margin-bottom: 0;
-  margin-left: 0;       
-  width: 86rem; 
-  height: 0;    
-  top: 0;
-  z-index: 1;
-}
-
 
 .tagline h1 {
   font-size: var(--extra-big-font-size);
@@ -523,6 +508,10 @@ img {
     border-radius: 50%;
   }
 }
+
+
+
+
 /*===================================== ABOUTUS SECTION =====================================*/
 /* Base Styles */
 .aboutus-section {
