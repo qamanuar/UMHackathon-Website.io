@@ -234,9 +234,14 @@ img {
 
     
     .navbar-toggler {
-      background-color: #010101;
+      background-color: black; /* Set background to black */
+      border: none; /* Optional: Remove border */
     }
     
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
     .navbar-toggler:hover {
       color: rgb(117, 99, 189);
     }
@@ -614,7 +619,7 @@ img {
   }
 }
 
-/* Larger screens adjustments */
+
 @media only screen and (min-width: 768px) {
   .objective-image {
     display: flex;
@@ -649,12 +654,12 @@ img {
   }
 }
 
-/* Recap & Bulb Icon */
+
 .recap {
   position: relative;
   text-align: center;
   padding: 5px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .small-bulb-icon {  
@@ -677,11 +682,12 @@ img {
   z-index: 1;
 }
 
+
 .design-container.purple-blur-bottom-right { 
-  position: absolute;   
+    
   width: 80rem;
   height: 2rem;
-  z-index: 0;
+  z-index: 1;
 }
 
 
@@ -721,18 +727,27 @@ img {
     width: 25px;  
   }
 }
+@media only screen and (min-width: 1024px) {
+  .design-container.purple-blur-bottom-right { 
+    position: absolute;
+    width: 80rem;
+    height: 2rem;
+  }
+}
 
 @media only screen and (max-width: 1024px) {
   .design-container.purple-blur-top-left {
+    
     width: 68rem;
     top: 1rem;
     left: -11rem;
   }
-  .design-container.purple-blur-bottom-right {  
-    width: 54rem;
-    height: 4rem;
+  .design-container.purple-blur-bottom-right { 
+    position: relative; 
+    width: 54rem !important;
+    height: -2rem;
     right: -8rem;
-    bottom: 30rem;
+    bottom: 20rem;
   }
 }
 
@@ -742,7 +757,8 @@ img {
     top: 0;
     left: -4rem;
   }
-  .design-container.purple-blur-bottom-right {  
+  .design-container.purple-blur-bottom-right { 
+    position: relative;  
     width: 48rem;
     height: 0rem;
     right: -3rem;
@@ -752,15 +768,15 @@ img {
 
 @media only screen and (max-width: 500px) {
   .design-container.purple-blur-top-left {
-    width: 54rem; 
+    width: 55rem; 
     left: 0;
     top: 0rem;  
 }
-  .design-container.purple-blur-bottom-right {  
-    width: 30rem;
-    height:8rem;
-    right: 0rem;
-    bottom: 12rem;
+  .design-container.purple-blur-bottom-right {
+    position: relative !important;      
+    width: 40rem !important;
+    height:0rem;
+    bottom: 25rem;
   }
 }
 
@@ -801,7 +817,48 @@ body {
   text-align: center;
   width: 40vh;
 }
+#overview {
+  position: relative; /* Make this section the reference for absolutely positioned elements */
+}
 
+.svg-background {
+  position: absolute; /* Position within the #overview section */
+  top: 30%; /* Adjust this value for vertical placement within #overview */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -40%); /* Fine-tune the positioning */
+  width: 50%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: -1; /* Push behind content */
+}
+.svg-background2 {
+  position: absolute; /* Position within the #overview section */
+  top: 60%; /* Adjust this value for vertical placement within #overview */
+  left: 35%; /* Center horizontally */
+  transform: translate(-50%, -40%); /* Fine-tune the positioning */
+  width: 50%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: -1; /* Push behind content */
+}
+
+.svg-rbackground1 {
+  position: absolute; /* Position within the #overview section */
+  top: 65%; /* Adjust this value for vertical placement within #overview */
+  left: 100%; /* Center horizontally */
+  transform: translate(-50%, -40%); /* Fine-tune the positioning */
+  width: 70%; /* Adjust width as needed */
+  height: 70%; /* Maintain aspect ratio */
+  z-index: -1; /* Push behind content */
+}
+
+.svg-rbackground2 {
+  position: absolute; /* Position within the #overview section */
+  top: 65%; /* Adjust this value for vertical placement within #overview */
+  left: 95%; /* Center horizontally */
+  transform: translate(-50%, -40%); /* Fine-tune the positioning */
+  width: 40%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: -1; /* Push behind content */
+}
 .overview h3 {
   font-size: 1.3rem;
   color: white;
@@ -1085,20 +1142,7 @@ span.text {
     row-gap: 10px;
   }
 
-  /* Styling for the added image */
-.design-container {
-  position: absolute; /* Allows overlapping */
-  top: 50%; /* Adjust vertical position */
-  left: 0; /* Align to the left */
-  transform: translate(-20%, -50%); /* Fine-tune position and centering */
-  z-index: -1; /* Place behind other content for overlap effect */
-}
-
-.design-container img {
-  width: 150px; /* Resize the image */
-  height: auto; /* Maintain aspect ratio */
-  opacity: 0.8; /* Add transparency for subtle overlap */
-}
+  
 
 
 }
