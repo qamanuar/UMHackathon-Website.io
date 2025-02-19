@@ -231,11 +231,7 @@ img {
     .nav-item a:hover {
       color: rgb(117, 99, 189);
     }
-    
-    .navbar {
-      background-color: #000000 !important;
-      z-index: 1000; /* Ensure navbar stays on top */
-    }
+
     
     .navbar-toggler {
       background-color: #010101;
@@ -1765,6 +1761,20 @@ a.contact-link:hover {
   padding-top: 120px;
   padding-bottom: 100px;
 }
+
+/* Default navbar (before scroll) */
+#main-nav {
+  background: transparent;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Navbar when scrolled */
+.scroll-header {
+  background: black !important;  /* Solid black */
+  background-image: none !important; /* Ensures no gradient */
+  box-shadow: none !important; /* Remove any shadow effects */
+}
+
 
 
 /* Prevent big gap at the bottom of the section */
