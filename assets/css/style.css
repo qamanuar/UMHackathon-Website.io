@@ -1217,12 +1217,27 @@ span.text {
 
 .count_down {
   display: flex;
+  width: 2000px;
   justify-content: center;
   justify-self: center;
   align-items: center;
   padding: 50px;
   gap: 30px;
   background: #000000;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping for small screens */
+  gap: 20px; /* Adds spacing between countdown items */
+}
+
+.countdown-item {
+  flex: 1; /* Makes items flexible */
+  min-width: 120px; /* Ensures they don’t shrink too much */
+  text-align: center;
 }
 
 /* responsive page for timeline for medium screen */
@@ -1310,8 +1325,8 @@ span.text {
 
 .circle svg {
   position: relative;
-  width: 150px;
-  height: 150px;
+  max-width: 100%;
+  height: auto;
   transform: rotate(270deg);
 }
 
