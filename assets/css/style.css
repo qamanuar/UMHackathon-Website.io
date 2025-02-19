@@ -788,7 +788,7 @@ body {
 }
 
 .overview_icon{
-  width: 70px;
+  width: 20px;
   margin-bottom: 10px;
 }
 
@@ -1014,7 +1014,7 @@ body {
 }
 
 .milestone_icon {
-  width: 70px;
+  width: 20px;
   margin-top: 3px;
   margin-bottom: 3px; /* Adjust icon spacing */
   margin-left: 25px;
