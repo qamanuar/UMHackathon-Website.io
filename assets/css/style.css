@@ -1207,6 +1207,7 @@ span.text {
 
 .count_down {
   display: flex;
+  width: 2000px;
   justify-content: center;
   justify-self: center;
   align-items: center;
