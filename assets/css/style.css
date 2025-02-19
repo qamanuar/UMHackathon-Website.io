@@ -760,9 +760,19 @@ img {
 
 /* ==================================== OVERVIEW SECTION ==================================== */
 
+body {
+  background-color: black; /* Ensures the whole page is black */
+  color: white; /* Sets text to white so it's visible */
+}
+
+/* Fix for Overview Section */
+.overview-section {
+  background: black; 
+  color: white; /* Change from black to white */
+}
 .overview_title h2 {
   font-size: var(--big-font-size);
-  color: var(--dark-blue-color);
+  color: white;
 }
 
 .overview_flexbox {
@@ -783,6 +793,7 @@ img {
 
 .overview h3 {
   font-size: 1.3rem;
+  color: white;
 }
 
 .overview div {
@@ -791,7 +802,7 @@ img {
 
 .overview_icon {
   font-size: 3rem;
-  color: black;
+  color: white;
 }
 
 
@@ -879,6 +890,9 @@ img {
   font-weight: 600;
   color: var(--dark-blue-color);
 }
+.milestone_title .white-text {
+  color: white ; /* Ensures "We" is white */
+}
 
 .milestone_title span {
   color: var(--dark-red-color);
@@ -893,7 +907,7 @@ img {
 
 .wrappers {
   display: flex;
-  background-color: #fff;
+  background-color: #000000;
   gap: 100px;
 }
 
@@ -1027,6 +1041,23 @@ span.text {
     grid-template-columns: auto;
     row-gap: 10px;
   }
+
+  /* Styling for the added image */
+.design-container {
+  position: absolute; /* Allows overlapping */
+  top: 50%; /* Adjust vertical position */
+  left: 0; /* Align to the left */
+  transform: translate(-20%, -50%); /* Fine-tune position and centering */
+  z-index: -1; /* Place behind other content for overlap effect */
+}
+
+.design-container img {
+  width: 150px; /* Resize the image */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0.8; /* Add transparency for subtle overlap */
+}
+
+
 }
 
 /*===================================== TIMELINE SECTION =====================================*/
