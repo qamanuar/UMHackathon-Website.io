@@ -771,6 +771,11 @@ body {
   color: white; /* Sets text to white so it's visible */
 }
 
+.overview_icon{
+  width: 70px;
+  margin-bottom: 10px;
+}
+
 /* Fix for Overview Section */
 .overview-section {
   background: black; 
@@ -914,10 +919,10 @@ body {
 .wrappers {
   display: flex;
   background-color: #000000;
-  gap: 100px;
+  gap: 80px;
 }
 
-.milestone {
+/* .milestone {
   width: 200px;
   height: 200px;
   display: flex;
@@ -925,13 +930,56 @@ body {
   justify-content: space-evenly;
   padding: 1em 0;
   position: relative;
+  background: url('assets/images/card') no-repeat center;
   font-size: 16px;
   border-radius: 0.5em;
   background-color: var(--dark-blue-color);
   border-bottom: 5px solid var(--dark-red-color);
   transition: 0.3s;
   animation: blurring 3s ease-in-out infinite;
+} */
+
+.milestone {
+  width: 270px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  font-size: 16px;
+  border-radius: 1em;
+  background: url('../images/card.svg') no-repeat center;
+  background-size: cover;
+  padding: 10px 0; /* Ensures proper spacing */
+  transition: transform 0.3s ease-in-out
 }
+
+.milestone_icon {
+  width: 70px;
+  margin-top: 3px;
+  margin-bottom: 3px; /* Adjust icon spacing */
+  margin-left: 25px;
+}
+
+.num {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 6px; /* Space between number & text */
+  margin-left: 25px;
+}
+
+.text {
+  font-size: 1rem;
+  margin-bottom: 8px; /* Push text down slightly */
+  margin-left: 25px;
+}
+
+.milestone:hover{
+  transform: scale(1.1);
+}
+
 
 @keyframes blurring {
   0% {
@@ -943,17 +991,6 @@ body {
   100% {
     box-shadow: 0 0 12px var(--dark-red-color);
   }
-}
-
-.milestone:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px var(--dark-blue-color);
-}
-
-.milestone_icon {
-  color: #fff;
-  font-size: 2.5em;
-  text-align: center;
 }
 
 span.num {
@@ -1775,8 +1812,6 @@ a.contact-link:hover {
   box-shadow: none !important; /* Remove any shadow effects */
 }
 
-
-
 /* Prevent big gap at the bottom of the section */
 @media (min-width: 2000px) {
   #home,
@@ -1791,4 +1826,39 @@ a.contact-link:hover {
     padding-bottom: 100px;
     
   }
+}
+
+/*===================================== MILESTONE STAT CARD =====================================*/
+
+.stat-card {
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.1); /* Light transparent */
+  border-radius: 20px;
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Soft glow */
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.stat-card h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stat-card p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
 }
