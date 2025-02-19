@@ -1435,112 +1435,112 @@ span.text {
 }
 
 /*===================================== Hosts and Partners =====================================*/
-
-.hostnpartners {
-  overflow: hidden;
-  display: flex;
-  padding: 200px;
-  perspective: 1000px;
-  transform-style: preserve-3d;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-#drag,
-#spin {
-  position: relative;
-  display: flex;
-  margin: auto;
-  transform-style: preserve-3d;
-  transform: rotateX(-10deg);
+* {
+  margin: 0;
 }
 
-#spin img {
-  transform-style: preserve-3d;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+
+.hostnpartners_title .section_title {
+  color: #202020;
+}
+
+.sponsor-title {
   text-align: center;
-  padding: 10px;
-  border-radius: 10%;
-  background-color: var(--dark-blue-color);
-  /* background-image: linear-gradient(180deg, var(--dark-blue-color), var(--dark-red-color));; */
-  -webkit-box-reflect: below 10px linear-gradient
-    (transparent, transparent, #0005);
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 
-@media screen and (max-width: 600px) {
-  #spin img {
-    width: 70%;
-    height: 70%;
+
+.diamond-title {
+  color: #405fbd;
+}
+
+.platinum-title {
+  color: #afcfff;
+}
+
+.gold-title {
+  color: #ffde57;
+}
+
+.wrapper {
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
   }
 }
 
-#spin img:hover {
-  /* box-shadow: 0 0 10px var(--dark-red-color); */
-  cursor: pointer;
+@keyframes scrollRight {
+  to {
+    right: -200px;
+  }
 }
 
-.host:hover {
-  box-shadow: 0 0 30px var(--dark-blue-color);
-}
-
-.diamond:hover {
-  box-shadow: 0 0 50px #00d0ff;
-}
-
-.platinum:hover {
-  box-shadow: 0 0 50px #eff1ec;
-}
-
-.gold:hover {
-  box-shadow: 0 0 30px #ffd700;
-}
-
-.collaborator:hover {
-  box-shadow: 0 0 30px #00008b;
-}
-
-.benefit-in-kind:hover {
-  box-shadow: 0 0 30px #3eb489;
-}
-
-.media_collaborator:hover {
-  box-shadow: 0 0 30px #ff0000;
-}
-
-#sponsor {
-  box-shadow: 0 0 15px #fffd;
-  -webkit-box-reflect: below 10px linear-gradient
-    (transparent, transparent, #0007);
-}
-
-#ground {
-  width: 900px;
-  height: 900px;
+.itemLeft,
+.itemRight {
+  width: 200px;
+  height: 100px;
+  background-color: #475c9a; 
+  border-radius: 6px;
   position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotateX(90deg);
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
 }
 
-@keyframes spin {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
+.itemLeft {
+  left: max(calc(200px * 5), 100%);
+  animation-name: scrollLeft;
 }
 
-@keyframes spinRevert {
-  from {
-    transform: rotateY(360deg);
-  }
-  to {
-    transform: rotateX(0deg);
-  }
+.itemRight {
+  right: max(calc(200px * 5), calc(100% + 200px));
+  animation-name: scrollRight;
 }
+
+.item1 {
+  animation-delay: calc(30s / 5 * (5 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 5 * (5 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 5 * (5 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 5 * (5 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 5 * (5 - 5) * -1);
+}
+
 
 /*===================================== FOOTER SECTION =====================================*/
 footer {
