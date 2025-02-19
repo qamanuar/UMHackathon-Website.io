@@ -230,13 +230,15 @@ img {
 .nav-item a {
   font-family: var(--body-font--);
   font-weight: bold;
-  color: #DCD0F4;
+  color: #ffffff;
   white-space: nowrap;
 }
 
 .nav-item a:hover {
   color: rgb(255, 243, 9);
 }
+
+
 
 
 .navbar-toggler{
@@ -254,6 +256,17 @@ img {
   color: white; /* Ensures text remains readable */
 }
 
+.design-container.purple-blur-bottom-left {      
+  position: relative; 
+  margin-bottom: 0;
+  margin-left: 0;       
+  width: 86rem; 
+  height: 0;    
+  top: 0;
+  z-index: 1;
+}
+
+
 .tagline h1 {
   font-size: var(--extra-big-font-size);
   font-weight: 700;
@@ -268,6 +281,8 @@ img {
   -webkit-animation: gradient 12s ease-in-out infinite;
   animation: gradient 12s ease-in-out infinite;
 }
+
+
 
 @media screen and (min-width: 991.5px) {
   .robot {
@@ -683,6 +698,7 @@ img {
   height: 3rem;
   z-index: 0;
 }
+
 
 .design-container.purple-blur-top-left img {
   width: 30%;
