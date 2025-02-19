@@ -775,6 +775,7 @@ body {
   color: white; /* Sets text to white so it's visible */
 }
 
+
 /* Fix for Overview Section */
 .overview-section {
   background: black; 
@@ -800,7 +801,48 @@ body {
   text-align: center;
   width: 40vh;
 }
+#overview {
+  position: relative; /* Make this section the reference for absolutely positioned elements */
+}
 
+.svg-background {
+  position: absolute; /* Position within the #overview section */
+  top: 30%; /* Adjust this value for vertical placement within #overview */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -40%); /* Fine-tune the positioning */
+  width: 50%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: -1; /* Push behind content */
+}
+.svg-background2 {
+  position: absolute; /* Position within the #overview section */
+  top: 60%; /* Adjust this value for vertical placement within #overview */
+  left: 35%; /* Center horizontally */
+  transform: translate(-50%, -40%); /* Fine-tune the positioning */
+  width: 50%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: -1; /* Push behind content */
+}
+
+.svg-rbackground1 {
+  position: absolute; /* Position within the #overview section */
+  top: 65%; /* Adjust this value for vertical placement within #overview */
+  left: 100%; /* Center horizontally */
+  transform: translate(-50%, -40%); /* Fine-tune the positioning */
+  width: 70%; /* Adjust width as needed */
+  height: 70%; /* Maintain aspect ratio */
+  z-index: -1; /* Push behind content */
+}
+
+.svg-rbackground2 {
+  position: absolute; /* Position within the #overview section */
+  top: 65%; /* Adjust this value for vertical placement within #overview */
+  left: 95%; /* Center horizontally */
+  transform: translate(-50%, -40%); /* Fine-tune the positioning */
+  width: 40%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: -1; /* Push behind content */
+}
 .overview h3 {
   font-size: 1.3rem;
   color: white;
@@ -1052,20 +1094,7 @@ span.text {
     row-gap: 10px;
   }
 
-  /* Styling for the added image */
-.design-container {
-  position: absolute; /* Allows overlapping */
-  top: 50%; /* Adjust vertical position */
-  left: 0; /* Align to the left */
-  transform: translate(-20%, -50%); /* Fine-tune position and centering */
-  z-index: -1; /* Place behind other content for overlap effect */
-}
-
-.design-container img {
-  width: 150px; /* Resize the image */
-  height: auto; /* Maintain aspect ratio */
-  opacity: 0.8; /* Add transparency for subtle overlap */
-}
+  
 
 
 }
