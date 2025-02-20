@@ -1498,23 +1498,23 @@ span.text {
 }
 
 .accordion {
-  --bs-accordion-border-radius: 10px;
-  --bs-accordion-inner-border-radius: 10px;
+  --bs-accordion-border-radius: 15px;
+  --bs-accordion-inner-border-radius: 15px;
   --bs-accordion-btn-focus-box-shadow: 0;
   --bs-accordion-border-width: 0;
 }
 
 .accordion-item {
   background: linear-gradient(to right, #000000 0%, #4367ff 50%, #90b3e7 100%);
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .accordion-body {
   font-weight: 500;
   background: linear-gradient(to right, #000000 0%, #4367ff 50%, #90b3e7 100%);
   color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .accordion-button {
@@ -1526,7 +1526,7 @@ span.text {
 
   background-image: url(../images/faq_card_cover.png);
   background-size: cover;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .accordion-button:hover {
