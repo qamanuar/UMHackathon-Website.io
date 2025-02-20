@@ -975,7 +975,7 @@ body {
 
 .wrappers {
   display: flex;
-  background-color: #000000;
+  background-color: transparent;
   gap: 80px;
 }
 
@@ -1080,7 +1080,16 @@ span.text {
     height: 180px;
   }
   .milestone_icon {
-    font-size: 2.25em;
+    width: 35px;
+    margin-top: 3px;
+    margin-bottom: 3px; /* Adjust icon spacing */
+    margin-left: 12px;
+  }
+  .num {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 6px; /* Space between number & text */
+    margin-left: 12px;
   }
   span.num {
     font-size: 1.75em;
@@ -1325,28 +1334,17 @@ span.text {
 
 .count_down {
   display: flex;
-  width: 2000px;
+  width: 100%; /* Make it responsive */
+  max-width: 100vw; /* Ensure it fits the screen */
   justify-content: center;
-  justify-self: center;
   align-items: center;
   padding: 50px;
   gap: 30px;
   background: #000000;
+  overflow: hidden; /* Prevent unwanted scrolling */
 }
 
-.countdown-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; /* Allows wrapping for small screens */
-  gap: 20px; /* Adds spacing between countdown items */
-}
 
-.countdown-item {
-  flex: 1; /* Makes items flexible */
-  min-width: 120px; /* Ensures they don’t shrink too much */
-  text-align: center;
-}
 
 /* responsive page for timeline for medium screen */
 @media screen and (max-width: 900px) {
@@ -1401,7 +1399,8 @@ span.text {
   }
   /* count down sector */
   .count_down {
-    display: grid;
+    display: flex;
+    flex-direction: column;
   }
   .count_down_timer {
     flex-direction: column;
@@ -1566,7 +1565,7 @@ span.text {
 
 
 .hostnpartners_title .section_title {
-  color: #202020;
+  color: #ffffff;
 }
 
 .sponsor-title {
