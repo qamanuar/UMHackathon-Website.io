@@ -1035,8 +1035,7 @@ span.text {
   font-weight: 400;
   color: white;
 
-  background: linear-gradient(to top, #c5047e 0%, #5f00dc 100%);
-   
+  /* background: linear-gradient(to top, #c5047e 0%, #5f00dc 100%); */
 
   background: linear-gradient(0deg, 
             rgba(0,0,0,1) 20%, 
@@ -1045,7 +1044,6 @@ span.text {
             rgba(67,103,255,1) 65%, 
             rgba(0,0,0,1) 
             80%);
-
 }
 
 .line_section {
@@ -1105,16 +1103,12 @@ span.text {
   right: 50%;
 }
 
+.content1 .dotted_line {
+  top: calc(-25% + 1rem);
+}
+
 .line_section:nth-child(odd) .dotted_line {
   left: 50%;
-}
-
-.content7 .dotted_line {
-  top: calc(-10% + 1rem);
-}
-
-.content8 .dotted_line{
-  top: calc(-10% - 0.5rem);
 }
 
 .content {
@@ -1122,25 +1116,32 @@ span.text {
   width: calc(50%-2rem);
   word-wrap: break-word;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content_title {
   display: flex;
+  justify-content: center;
 }
 
-.long_content {
+/* .long_content {
   word-wrap: break-word;
-  /* transform: translateY(-50%); */
   width: calc(50%-2rem);
   text-align: center;
 }
 
 .long_content h2 {
   color: #fff;
-}
+} */
 
 .content h2 {
   color: #fff;
+}
+
+.content1 .content_title h2 {
+  max-width: 90%;
 }
 
 .show-me:nth-child(n) {
@@ -1217,8 +1218,14 @@ span.text {
 
 /* responsive page for timeline for medium screen */
 @media screen and (max-width: 900px) {
+  .line_section h2{
+    font-size: 1.5rem;
+  }
   .dotted_line {
     top: calc(-25% - 0.25rem);
+  }
+  .content1 .dotted_line {
+    top: calc(-25% + 0.5rem);
   }
   /* count down sector */
   .count_down {
@@ -1228,21 +1235,11 @@ span.text {
 
 /* responsive page for timeline for small screen */
 @media screen and (max-width: 600px) {
-  .content1 ul li {
-    transform: translateX(-25%);
+  .content {
+    width: 10rem;
   }
-  .content2 h2 {
-    transform: translateX(15%);
-  }
-  .content3 ul li {
-    max-width: 70%;
-    transform: translateX(-15%)
-  }
-  .content4 h2 {
-    transform: translateX(15%);
-  }
-  .content5 ul li {
-    transform: translateX(-25%);
+  .content3 p {
+    max-width: 90%;
   }
   .line_section{
     font-size: 0.8rem;
@@ -1254,17 +1251,8 @@ span.text {
   .dotted_line {
     top: calc(-25% - 0.75rem);
   }
-  .long_content .dotted_line {
-    top: calc(-25% - 0.25rem);
-  }
-  .content3 .dotted_line {
-    top: calc(-25% - 0.75rem);
-  }
-  .content7 .dotted_line {
-    top: calc(-15% + 0.75rem);
-  }
-  .content8 .dotted_line {
-    top: calc(-25% + 0.25rem);
+  .content1 .dotted_line {
+    top: calc(-25% - 0.5rem);
   }
   /* count down sector */
   .count_down {
