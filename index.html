@@ -17,7 +17,7 @@
     />
 
     <!-- Icons,stylesheet and fonts -->
-    <link rel="icon" href="./assets/images/um25-logo.png" type="image/svg" />
+    <link rel="icon" href="assets\images\umh25-logo.png" type="image/png" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link
@@ -42,58 +42,51 @@
     <!--=================== 
         HEADER Section 
         =================== -->
-    <section class="container">
-      <nav
-        class="navbar navbar-expand-md fixed-top navbar-light bg-white shadow-sm p-0"
+<section class="container">
+  <nav class="navbar navbar-expand-md fixed-top navbar-light bg-black p-0">
+    <div class="container-fluid">
+      <a href="#home" class="navbar-brand">
+        <img id="navigation-logo" src="./assets/images/umh-logo2025-white-cropped.png" height="10"/>
+      </a>
+      <!-- toggle button for  small screen size -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#main-nav"
+        aria-controls="main-nav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-        <div class="container-fluid">
-          <a href="#home" class="navbar-brand">
-            <img id="navigation-logo" src="./assets/images/BLACK FONT.PNG" />
-          </a>
-          <!-- toggle button for  small screen size -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#main-nav"
-            aria-controls="main-nav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"> </span>
-          </button>
-          <!-- navbar links -->
-          <div
-            id="main-nav"
-            class="collapse navbar-collapse justify-content-end align-center mx-4"
-          >
-            <ul class="navbar-nav gap-3">
-              <li class="nav-item">
-                <a href="#about-us" class="nav-link">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="#overview" class="nav-link">Overview</a>
-              </li>
-              <li class="nav-item">
-                <a href="#timeline" class="nav-link"> Timeline </a>
-              </li>
-              <li class="nav-item">
-                <a href="#faq" class="nav-link">FAQ</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a href="#hosts-and-partners" class="nav-link">
-                  Hosts & Partners
-                </a>
-              </li> -->
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </section>
+        <span class="navbar-toggler-icon"> </span>
+      </button>
+      <!-- navbar links -->
+      <div
+        id="main-nav"
+        class="collapse navbar-collapse justify-content-end align-center mx-4"
+      >
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item">
+            <a href="#about-us" class="nav-link">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="#overview" class="nav-link">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a href="#timeline" class="nav-link"> Timeline </a>
+          </li>
+          <li class="nav-item">
+            <a href="#faq" class="nav-link">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>
 
     <!--===================
         HOMEPAGE Section 
-        =================== -->
+        =================== -->        
     <section id="home">
       <div class="container-xl container-lg container-fluid pt-lg-5 pt-md-5">
         <div class="row align-items-center py-5">
@@ -105,10 +98,10 @@
             <div>
               <div class="join-now-button" data-aos-offset="50" data-aos-delay="1500" data-aos="fade-right" data-aos-once="true">
                 <a
-                  class="btn btn-danger btn-lg rounded-2 button_join my-3"
-                  href="https://cutt.ly/umhackathon2023_teamregistration"
+                  class="btn btn-danger btn-lg rounded-pill button_join my-3"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe3GLOuGrOhyTDErtevwkVevxYRh0PQSzzk1zVnu2B5p0wUfw/viewform"
                   target="_self"
-                  >Join Now! <i class="uil uil-lightbulb"></i>
+                  >Join Now!  <img src="./assets/images/bulb.svg" alt="Bulb Icon" width="30" height="30" />
                 </a>
               </div>
             </div>
@@ -130,24 +123,14 @@
           </div>
         </div>
       </div>
-      <!-- The animated square block background in homepage -->
-      <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
     </section>
+    
+    
     <!--=================== 
         ABOUT US & OBJECTIVE Section + Recap Video
         =================== -->
     <!-- Purple Blur Top Left (Background Element) -->
+    
 <div class="design-container purple-blur-top-left">
   <img src="./assets/images/top-left-design.svg" alt="Top Left Doodle" />
 </div>
@@ -238,25 +221,27 @@
     <!-- ===================
         OVERVIEW & MILESTONE Section
         =================== -->
+      
     <section id="overview">
         <div class="overview_title mb-5 text-center">
           <h2 class="fw-bold">OVERVIEW</h2>
         </div>
-
+        
         <div class="overview_container">
           <div class="overview_flexbox">
+            
             <div class="overview">
-              <i class="uil uil-file-search-alt overview_icon"></i>
+              <img src="assets/images/domains.svg" class="overview_icon" alt="Domain">
               <h3>Sectors Involved</h3>
-              <div>2 Domains Covered</div>
+              <div>3 Domains Covered</div>
             </div>
             <div class="overview">
-              <i class="uil uil-laptop overview_icon"></i>
+              <img src="assets/images/mode.svg" class="overview_icon" alt="Mode">
               <h3>Competition Mode</h3>
               <div>Physical and Online Mode</div>
             </div>
             <div class="overview">
-              <i class="uil uil-university overview_icon"></i>
+              <img src="assets\images\venue.svg" class="overview_icon" alt="Venue">
               <h3>Venue</h3>
               <div>Universiti Malaya<br />KPS</div>
             </div>
@@ -266,49 +251,97 @@
         <div class="prizepool_section">
           <div class="prizepool mt-5 text-center fs-1 fw-bold">PRIZE POOL</div>
           <div class="prizepool section_subtitle">
-            Up to <span>RM 20K</span> for both domains!
+            Up to <span>RM 20K</span> for all domains!
           </div>
           <div class="prizepool_container" id="prizepool_container">
             <div class="prizepool_award second" id="gold">
-              <img src="assets/images/secondrunner.svg" alt="" class="tier" />
+              <img src="assets/images/2nd.svg" alt="" class="tier" />
               <p class="amount_second">RM 4000</p>
             </div>
             <div class="prizepool_award first" id="diamond">
-              <img src="assets/images/champion.svg" alt="" class="tier" />
+              <img src="assets/images/champ.svg" alt="" class="tier" />
               <p class="amount_first">RM 7000</p>
             </div>
             <div class="prizepool_award third" id="silver">
-              <img src="assets/images/thirdrunner.svg" alt="" class="tier" />
+              <img src="assets/images/3rd.svg" alt="" class="tier" />
               <p class="amount_third">RM 2500</p>
             </div>
           </div>
         </div>
 
         <div class="milestone_title">
-          <div>What We <span> Achieved</span></div>
+          <div>What <span class="white-text">We</span> <span>Achieved</span></div>
         </div>
         <div class="milestone_container container">
           <div class="wrappers">
             <div class="milestone">
-              <i class="uil uil-users-alt milestone_icon"></i>
+              <img src="./assets/images/participants.svg" class="milestone_icon" alt="Participants">
               <span class="num" data-val="178">000</span>
               <span class="text">Participants</span>
             </div>
             <div class="milestone">
-              <i class="uil uil-university milestone_icon"></i>
+              <img src="assets\images\universities.svg" class="milestone_icon" alt="University">
               <span class="num" data-val="20">20</span>
               <span class="text">University</span>
             </div>
             <div class="milestone">
-              <i class="uil uil-file-upload milestone_icon"></i>
+              <img src="./assets/images/submission.svg" class="milestone_icon" alt="Submission">
               <span class="num" data-val="41">41</span>
               <span class="text">Submission</span>
             </div>
           </div>
         </div>
       </div>
+      <div class="svg-background">
+        <img src="./assets/images/bgmid2.svg" alt="SVG Background" />
+      </div>   
+      <div class="svg-background2">
+        <img src="./assets/images/bgmid.svg" alt="SVG Background2" />
+      </div>   
+      <div class="svg-rbackground1">
+        <img src="./assets/images/bgmid.svg" alt="SVG rBackground1" />
+      </div>   
+      <div class="svg-rbackground2">
+        <img src="./assets/images/leftstar.svg" alt="SVG rBackground2" />
+      </div>   
     </section>
 
+  <!--===================
+    HOSTS AND PARTNERS Section 
+    =================== -->
+        <section class="hostnpartners_section section" id="hosts-and-partners">
+          <div class="hostnpartners_title">
+            <h2 class="section_title">HOSTS AND PARTNERS</h2>
+          </div>
+        
+          <h3 class="sponsor-title diamond-title">Diamond Sponsors</h3>
+          <div class="wrapper">
+            <div class="item itemLeft item1"></div>
+            <div class="item itemLeft item2"></div>
+            <div class="item itemLeft item3"></div>
+            <div class="item itemLeft item4"></div>
+            <div class="item itemLeft item5"></div>
+          </div>
+        
+          <h3 class="sponsor-title platinum-title">Platinum Sponsors</h3>
+          <div class="wrapper">
+            <div class="item itemRight item1"></div>
+            <div class="item itemRight item2"></div>
+            <div class="item itemRight item3"></div>
+            <div class="item itemRight item4"></div>
+            <div class="item itemRight item5"></div>
+          </div>
+        
+          <h3 class="sponsor-title gold-title">Gold Sponsors</h3>
+          <div class="wrapper">
+            <div class="item itemLeft item1"></div>
+            <div class="item itemLeft item2"></div>
+            <div class="item itemLeft item3"></div>
+            <div class="item itemLeft item4"></div>
+            <div class="item itemLeft item5"></div>
+          </div>
+        </section>
+        
     <!-- ===================
         TIMELINE Section
         =================== -->
@@ -480,9 +513,13 @@
         =================== -->
     <section class="count_down">
       <div class="count_down_timer_container">
-        <h2 class="section_title">CountDown to UMHackathon 2025</h2>
+        <div class="section-title mb-5">
+            <h2 class="fs-1 fw-bold text-light">
+              CountDown to UMHackathon 2025
+            </h2>
+          </div>
         <div class="count_down_timer">
-          <div class="circle" style="--clr: #00ddff">
+          <div class="circle" style="--clr: #90B3E7">
             <div class="dots day_dot"></div>
             <svg>
               <circle cx="70" cy="70" r="70"></circle>
@@ -491,7 +528,7 @@
             <div id="days">00<br /><span>Days</span></div>
           </div>
 
-          <div class="circle" style="--clr: #ff2972">
+          <div class="circle" style="--clr: #749DE8">
             <div class="dots hr_dot"></div>
             <svg>
               <circle cx="70" cy="70" r="70"></circle>
@@ -500,7 +537,7 @@
             <div id="hours">00<br /><span>Mins</span></div>
           </div>
 
-          <div class="circle" style="--clr: #fee800">
+          <div class="circle" style="--clr: #5887E9">
             <div class="dots min_dot"></div>
             <svg>
               <circle cx="70" cy="70" r="70"></circle>
@@ -509,7 +546,7 @@
             <div id="minutes">00</div>
           </div>
 
-          <div class="circle" style="--clr: #04fc43">
+          <div class="circle" style="--clr: #3C71EA">
             <div class="dots sec_dot"></div>
             <svg>
               <circle cx="70" cy="70" r="70"></circle>
@@ -520,7 +557,8 @@
         </div>
       </div>
 
-      <img src="./assets/images/countdown-1.svg" alt="countdown-graphic" />
+      <!-- <img src="./assets/images/countdown-1.svg" alt="countdown-graphic" /> -->
+    
     </section>
 
     <!--===================
@@ -567,8 +605,8 @@
                 >
                   <div class="accordion-body">
                     <p>                 
-                      UMHackathon 2025 preliminary round will be carried out from 10 April 2025 (Thursday) to 12 April 2025 (Saturday). 
-                      The final round of UMHackathon2025 will be held from 19th April 2025 (Saturday) to 20th April 2025 (Sunday).
+                      UMHackathon 2025 preliminary round will be carried out from 7 April 2025 (Thursday) to 12 April 2025 (Saturday). 
+                      The final round of UMHackathon2025 will be held from 15th April 2025 (Saturday) to 20th April 2025 (Sunday).
                     </p>
                   </div>
                 </div>
@@ -634,8 +672,8 @@
                 >
                   <div class="accordion-body">
                     <p>
-                      No, registration for the UMHackathon 2025 is completely free! There are no fees required to participate. 
-                      Simply sign up and join the event. But it’s on a first come first serve basis! 
+                      Yes, each team for UMHackathon 2025 would have to pay a commitment fee of RM25, which will be duly 
+                      refunded after the team has submitted their prototype and attended the pitching session for the preliminary round. 
                     </p>
                   </div>
                 </div>
@@ -667,10 +705,8 @@
                 >
                   <div class="accordion-body">
                     <p>
-                      Team registration form will open from 17th March 2025 12.00 pm until 31st March 2025 11.59 pm (GMT +8).
-                      However, the registration is on a
-                      first-come,first-served basis and will be closed once 90
-                      teams have registered.
+                      The registration form will open from 20th February 2025 at 12:00:00 pm until 5th April 2025 at 11:59:59 pm (GMT +8).
+                    
                     </p>
                   </div>
                 </div>
@@ -735,8 +771,9 @@
                 >
                   <div class="accordion-body">
                     <p>
-                      Each team will need to elect a team leader and fill up the UMHackathon 2025 Team Registration Form. 
-                      A formal acceptance notice will be sent to the team leader via email upon valid team registration. 
+                      Each team will elect a leader and fill in the UMHackathon 2025 Team Registration Form. 
+                      A formal acceptance notice will be sent to the team leader via email upon valid team registration.
+
                     </p>
                   </div>
                 </div>
@@ -757,7 +794,8 @@
                     aria-expanded="false"
                     aria-controls="question-7"
                   >
-                    How and where will UMHackathon 2025 be conducted?
+                  
+                  Can I change my team members after registration?
                   </button>
                 </h2>
                 <div
@@ -768,8 +806,7 @@
                 >
                   <div class="accordion-body">
                     <p>
-                      UMHackathon 2025 will be conducted online during preliminary round (10-12 April) and physically
-                      during final round (19-20 April) at KPS
+                      You are not allowed to change your team members once the registration is made.
                     </p>
                   </div>
                 </div>
@@ -790,8 +827,7 @@
                     aria-expanded="false"
                     aria-controls="question-8"
                   >
-                    How many competing rounds are there and what will we need to
-                    do?
+                    What is the mode of execution for UMHackathon 2025?
                   </button>
                 </h2>
                 <div
@@ -803,9 +839,13 @@
                   <div class="accordion-body">
                     <p>
 
-                      The UMHackathon 2025 will be divided into two rounds, the preliminary round and the final round.                      
-                      Key events such as the opening ceremony, workshops, final pitching and closing ceremony will take place over these two days. 
-                      All the participants are required to attend the UMHackathon from 19th April 2025 (Saturday) to 20th April 2025 (Sunday) otherwise that particular team will be considered as disqualified. 
+                      The UMHackathon 2025 will be divided into two rounds, the preliminary round and the final round. The problem statement for the preliminary round will be released on 7th April 2025 (Monday) at 8:00:00 pm.
+                      An online meeting will be held to explain the domain and how each team is assigned to their domain and problem statement. All teams may start to build their prototype once they receive their problem statement.
+                      The preliminary round will be carried out from 8th April 2025 (Tuesday) until 12th April 2025 at 11:59:59 pm. 
+
+                      <br><br> Final round of UMHackathon 2025 will be held from 15th April 2025 (Tuesday) to 20th April 2025 (Sunday). Key events such as the opening ceremony, workshops, final pitching, and closing ceremony will take place over these six days.
+                      The final round runs from 15th April to 20th April, with the last two days, 19th and 20th April, taking place physically at Auditorium Kompleks Perdana Siswa (KPS), Universiti Malaya.
+
                     </p>
                   </div>
                 </div>
@@ -831,62 +871,6 @@
         </div>
       </div>
     </section>
-    <!--===================
-        HOSTS AND PARTNERS Section 
-        =================== -->
-    <!-- <section class="hostnpartners_section section" id="hosts-and-partners">
-      <div class="hostnpartners_title">
-        <h2 class="section_title">HOSTS AND PARTNERS</h2>
-      </div>
-      <div class="hostnpartners">
-        <div id="drag">
-          <div id="spin">
-            <img src="assets/images/Host-Pekom.svg" alt="" class="image host" />
-            <img
-              src="assets/images/Diamond-Fusionex.svg"
-              alt=""
-              class="image diamond"
-            />
-            <img
-              src="assets/images/Platinum-Maxis.svg"
-              alt=""
-              class="image platinum"
-            />
-            <img
-              src="assets/images/Platinum-Swift.svg"
-              alt=""
-              class="image platinum"
-            />
-            <img
-              src="assets/images/Gold-Cyber-village.svg"
-              alt=""
-              class="image gold"
-            />
-            <img
-              src="assets/images/Gold-Dell.svg"
-              alt=""
-              class="image gold"
-            />
-            <img
-              src="assets/images/Collaborator-Maxis.svg"
-              alt=""
-              class="image collaborator"
-            />
-            <img
-              src="assets/images/Collaborator-IgnitexReluvate.svg"
-              alt=""
-              class="image collaborator"
-            />
-            <img
-              src="assets/images/Bik-VertexPrinting.svg"
-              alt=""
-              class="image benefit-in-kind"
-            />
-          </div>
-          <div id="ground"></div>
-        </div>
-      </div>
-    </section> -->
 
     <!--=================== 
         FOOTER Section 
@@ -902,7 +886,7 @@
               <ul class="doc-icon" id="doc-icon">
                 <li>
                   <a
-                    href="https://drive.google.com/file/d/1Om7ihobMKVos_iyF0HGR38xjIjrjcF63/view?usp=drive_link"
+                    href="https://docs.google.com/document/d/1N662W9aecZIJU5E3ZhibhZ_ap-c5qB3PrdWotMvse80/edit?usp=drive_link"
                     target="_blank"
                     class="fa-solid fa-file"
                     data-aos="fade-right"
