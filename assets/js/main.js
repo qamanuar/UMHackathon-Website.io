@@ -238,24 +238,24 @@ document.onpointerdown = function (e) {
 
 /*============================================================ FOOTER ======================================================================*/
 // Make the icon glow when hover the footer text
-const tnc = document.getElementById('tnc');
-const doc_icon = document.getElementById('doc-icon');
-const flw_us = document.getElementById('flw-us');
-const social_icon = document.getElementById('social-icon');
+// const tnc = document.getElementById('tnc');
+// const doc_icon = document.getElementById('doc-icon');
+// const flw_us = document.getElementById('flw-us');
+// const social_icon = document.getElementById('social-icon');
 
-tnc.addEventListener('mouseover', () => {
-    doc_icon.classList.add('icon-glow');
-});
-flw_us.addEventListener('mouseover', () => {
-    social_icon.classList.add('icon-glow');
-});
+// tnc.addEventListener('mouseover', () => {
+//     doc_icon.classList.add('icon-glow');
+// });
+// flw_us.addEventListener('mouseover', () => {
+//     social_icon.classList.add('icon-glow');
+// });
 
-tnc.addEventListener('mouseout', () => {
-    doc_icon.classList.remove('icon-glow');
-});
-flw_us.addEventListener('mouseout', () => {
-    social_icon.classList.remove('icon-glow');
-});
+// tnc.addEventListener('mouseout', () => {
+//     doc_icon.classList.remove('icon-glow');
+// });
+// flw_us.addEventListener('mouseout', () => {
+//     social_icon.classList.remove('icon-glow');
+// });
 
 function scrollTop(){
     const scrollY = window.pageYOffset
