@@ -899,8 +899,8 @@ body {
   position: absolute; /* Position within the #overview section */
   top: 65%; /* Adjust this value for vertical placement within #overview */
   left: 95%; /* Center horizontally */
-  transform: translate(-50%, -40%); /* Fine-tune the positioning */
-  width: 40%; /* Adjust width as needed */
+  transform: translate(-50%, -20%); /* Fine-tune the positioning */
+  width: 70%; /* Adjust width as needed */
   height: auto; /* Maintain aspect ratio */
   z-index: -1; /* Push behind content */
 }
@@ -999,7 +999,7 @@ body {
 
 .milestone_title div {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--dark-blue-color);
 }
