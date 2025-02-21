@@ -279,7 +279,7 @@ img {
   font-weight: 600;
   -webkit-background-clip: text;
   background-clip: text;
-  text-align: left; /* Keeps the text left-aligned */
+  text-align: center; /* Keeps the text left-aligned */
   color: transparent;
 }
 
