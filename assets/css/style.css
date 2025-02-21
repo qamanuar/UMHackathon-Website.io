@@ -456,25 +456,6 @@ img {
   --bs-btn-disabled-border-color: #ffffff;
 }
 
-.btn-danger{    /* Copied from bootstrap.min.css */
-  /* --bs-btn-color:#fff;
-  --bs-btn-bg:#dc3545;
-  --bs-btn-border-color:#000000;
-  --bs-btn-hover-color:#fff;
-  --bs-btn-hover-bg:#000000;
-  --bs-btn-focus-shadow-rgb:225,83,97;
-  --bs-btn-active-color:#fff;
-  --bs-btn-active-bg:#b02a37;
-  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color:#fff;
-  --bs-btn-disabled-bg:#dc3545; */
-  
-
-  --bs-btn-hover-border-color:#fff;
-  --bs-btn-active-border-color:#fff;
-  --bs-btn-disabled-border-color:#fff;
-}
-
 .area {
   background: #ffffff;
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
