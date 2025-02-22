@@ -850,6 +850,17 @@ body {
   color: white; /* Sets text to white so it's visible */
 }
 
+#overview {
+  position: relative;
+  background: url("/assets/images/OverviewBG.jpg") center/cover no-repeat;
+  padding: 50px 0;
+  background-size: 120%;
+ 
+  min-height: 400px;
+  z-index: -2;
+
+}
+
 .overview_icon{
   width: 70px;
   margin-bottom: 10px;
@@ -909,19 +920,11 @@ body {
   left: 100%; /* Center horizontally */
   transform: translate(-50%, -40%); /* Fine-tune the positioning */
   width: 70%; /* Adjust width as needed */
-  height: 70%; /* Maintain aspect ratio */
+  height: 100%; /* Maintain aspect ratio */
   z-index: -1; /* Push behind content */
 }
 
-.svg-rbackground2 {
-  position: absolute; /* Position within the #overview section */
-  top: 65%; /* Adjust this value for vertical placement within #overview */
-  left: 95%; /* Center horizontally */
-  transform: translate(-50%, -20%); /* Fine-tune the positioning */
-  width: 70%; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  z-index: -1; /* Push behind content */
-}
+
 .overview h3 {
   font-size: 1.3rem;
   color: white;
