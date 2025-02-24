@@ -303,7 +303,7 @@ img {
     /* position: relative; */
     right: 5%; /* Moves it more to the right */
     top: 40px;
-    width: 300px;
+    width: 600px;
     animation: float 6s ease-in-out infinite;
   }
 
@@ -739,7 +739,7 @@ img {
   position: relative; 
   margin-top: 0;
   left: 0;       
-  width: 78rem; 
+  width: 43rem; 
   height: 0;    
   bottom: 0;
   z-index: 1;
