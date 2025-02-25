@@ -1567,6 +1567,171 @@ span.text {
   border-radius: 50%;
   box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
 }
+/*===================================== JUDGE & MENTOR SECTION ============================*/
+.judge_mentor {
+  position: relative;
+  padding-bottom: 10rem;
+  overflow: hidden;
+  padding-top: 2rem;
+}
+
+/* Judges Wrapper */
+.judges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Judge Card */
+.judge {
+  position: relative;
+  text-align: center;
+  width: 100%; /* Full width for smaller screens */
+  max-width: 200px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column; /* Ensures vertical alignment */
+  align-items: center; /* Centers everything */
+}
+
+/* Judge Title */
+.judge-title {
+  position: relative;
+  color: white;
+  text-align: center;
+  font-size: 2rem; /* Scales with screen size */
+  z-index: 3;
+}
+
+/* Judge Name */
+.judge-name {
+  position: relative;
+  color: white;
+  font-size: 1rem;
+  margin-top: 10px;
+  z-index: 3;
+}
+
+/* Paragraph */
+p {
+  font-size: 1rem;
+  opacity: 0.8;
+  position: relative;
+  z-index: 3;
+}
+
+/* Judge Profile (Foreground Image) */
+.judge-profile {
+  position: absolute;
+  top: 38%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 120px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 4;
+}
+
+/* Judge Background (Purple Circle) */
+.judge-background {
+  width: 230px;
+  max-width: 250px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Background Blur Effect */
+.design-background {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  z-index: 1;
+}
+
+/*=============== MEDIA QUERIES FOR RESPONSIVENESS ===============*/
+
+@media screen and (max-width: 1200px) {
+  .design-background{
+    top: 60%;
+    width: 70%;
+  }
+  
+}
+@media (max-width: 1024px) {
+  .judges {
+    gap: 20px; /* Reduce spacing */
+  }
+
+  .judge-profile {
+    width: 60%;
+    left: 50%;
+    max-width: 100px;
+  }
+
+  .judge-background {
+    width: 90%;
+    max-width: 220px;
+  }
+  .design-background{
+    top: 50%;
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .judge-profile { 
+    left: 47%;
+  }
+@media screen and (max-width:639px){
+  .design-background{
+    top:32%;
+    width: 140%;
+  }
+
+}
+@media screen and (max-width:590px) {
+  .judges {
+    flex-direction: column; /* Stack all judges vertically */
+    align-items: center;
+  }
+
+  .judge {
+    max-width: 250px; /* Allow more width for better layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center profile and text */
+  }
+
+  .judge-profile {
+ 
+    transform: none; /* Removes centering adjustment */
+    margin-top: -50px; /* Adjust positioning on smaller screens */
+    width: 80px; /* Resize profile image */
+    top: 38% !important;
+    left: 33%;
+  }
+
+  .judge-background {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .judge-title {
+    font-size: 1.5rem;
+  }
+}
+}
+
+
 
 /*===================================== FAQ SECTION =====================================*/
 #faq {
