@@ -303,7 +303,7 @@ img {
     /* position: relative; */
     right: 5%; /* Moves it more to the right */
     top: 40px;
-    width: 300px;
+    width: 600px;
     animation: float 6s ease-in-out infinite;
   }
 
@@ -738,16 +738,15 @@ img {
 .design-container.purple-blur-top-left {      
   position: relative; 
   margin-top: 0;
-  margin-left: 0;       
-  width: 86rem; 
+  left: 0;       
+  width: 43rem; 
   height: 0;    
   bottom: 0;
   z-index: 1;
 }
 
 
-.design-container.purple-blur-bottom-right { 
-    
+.design-container.purple-blur-bottom-right {     
   width: 80rem;
   height: 2rem;
   z-index: 1;
@@ -755,7 +754,7 @@ img {
 
 
 .design-container.purple-blur-top-left img {
-  width: 30%;
+  width: 50%;
   height: auto;
   display: block;
 }
@@ -770,23 +769,48 @@ img {
   bottom: 50rem;
   right: -10rem;
 }
-@media only screen and (max-width: 1024px) {
+
+@media only screen and (max-width: 1400px) {
   .small-bulb-icon {
-    right: -45rem; 
+    left: 61rem !important; 
+    width: 35px;   
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .small-bulb-icon {
+    left: 58rem !important; 
+    width: 35px;   
+  }
+}
+@media only screen and (max-width: 992px) {
+  .small-bulb-icon {
+    left: 43rem !important; 
     width: 35px;   
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .small-bulb-icon {
-    right: -25rem; 
+    left: 32rem !important; 
     width: 30px;   
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 540px) {
   .small-bulb-icon {
-    right: -18rem; 
+    left: 29rem !important; 
+    width: 25px;  
+  }
+}
+@media only screen and (max-width: 450px) {
+  .small-bulb-icon {
+    left: 22rem !important; 
+    width: 25px;  
+  }
+}
+@media only screen and (max-width: 380px) {
+  .small-bulb-icon {
+    left: 19rem !important; 
     width: 25px;  
   }
 }
@@ -803,7 +827,7 @@ img {
     
     width: 68rem;
     top: 1rem;
-    left: -11rem;
+    left: 0rem;
   }
   .design-container.purple-blur-bottom-right { 
     position: relative; 
@@ -818,7 +842,7 @@ img {
   .design-container.purple-blur-top-left {   
     width: 50rem;
     top: 0;
-    left: -4rem;
+    left: 0rem;
   }
   .design-container.purple-blur-bottom-right { 
     position: relative;  
@@ -831,7 +855,7 @@ img {
 
 @media only screen and (max-width: 500px) {
   .design-container.purple-blur-top-left {
-    width: 55rem; 
+    width: 30rem; 
     left: 0;
     top: 0rem;  
 }
@@ -848,6 +872,17 @@ img {
 body {
   background-color: black; /* Ensures the whole page is black */
   color: white; /* Sets text to white so it's visible */
+}
+
+#overview {
+  position: relative;
+  background: url("/assets/images/OverviewBG.jpg") center/cover no-repeat;
+  padding: 50px 0;
+  background-size: 120%;
+ 
+  min-height: 400px;
+  z-index: -2;
+
 }
 
 .overview_icon{
@@ -909,19 +944,11 @@ body {
   left: 100%; /* Center horizontally */
   transform: translate(-50%, -40%); /* Fine-tune the positioning */
   width: 70%; /* Adjust width as needed */
-  height: 70%; /* Maintain aspect ratio */
+  height: 100%; /* Maintain aspect ratio */
   z-index: -1; /* Push behind content */
 }
 
-.svg-rbackground2 {
-  position: absolute; /* Position within the #overview section */
-  top: 65%; /* Adjust this value for vertical placement within #overview */
-  left: 95%; /* Center horizontally */
-  transform: translate(-50%, -20%); /* Fine-tune the positioning */
-  width: 70%; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  z-index: -1; /* Push behind content */
-}
+
 .overview h3 {
   font-size: 1.3rem;
   color: white;
