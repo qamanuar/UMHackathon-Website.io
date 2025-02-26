@@ -279,7 +279,7 @@ img {
   font-weight: 600;
   -webkit-background-clip: text;
   background-clip: text;
-  text-align: left; /* Keeps the text left-aligned */
+  text-align: center; /* Keeps the text left-aligned */
   color: transparent;
 }
 
@@ -2147,4 +2147,145 @@ a.contact-link:hover {
 .stat-card p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
+}
+
+
+
+/*===================================== LOGIN PAGE =====================================*/
+
+.outer-container {
+  background-color: #000;
+  background-image: url(../images/login-background.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.umh-web-link {
+  display: flex;
+}
+
+.umh-logo {
+  align-self: center;
+  margin: 20px auto;
+  height: 75px;
+}
+
+.login-form {
+  /* background-color: #afcfff; */
+  /* background-image: url(../images/login-form-background.png); */
+  background-size: cover;
+  color: #fff;
+  align-content: center;
+  border-radius: 70px;
+  padding: 10px auto;
+  margin: 20px auto;
+  width: 45%;
+  height: 50%;
+  z-index: 1;
+}
+
+.login-form1 {
+  position: absolute;
+  top: calc(30% - 0.15rem);
+}
+
+.login-form-img {
+  background-image: url(../images/login-form-background.png);
+  background-size: cover;
+  border-radius: 70px;
+  border: none;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.form-box {
+  opacity: 200%;
+  display: flex;
+  position: space-around;
+  flex-direction: column;
+}
+
+.form-item {
+  margin: 20px auto;
+  color: #fff;
+}
+
+.form-item:not(.form-title, .login-icon) {
+  box-shadow: 0 15px 10px #00000050;
+}
+
+.form-title {
+  margin-left: 15%;
+  font-size: xx-large;
+}
+
+.input-box {
+  display: flex;
+}
+
+.login-icon {
+  background-color: #afcfff;
+  align-self: center;
+  width: 45px;
+  padding: 10px;
+  margin: 20px -45px 20px auto;
+  border-width: 10px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-color: #afcfff;
+  z-index: 1;
+}
+
+.selectDisable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.login-input {
+  display: flex;
+  background-color: #afcfff;
+  color: #3b52ce;
+  width: 70%;
+  padding: 10px 10px 10px 45px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 20px auto 20px 0;
+  z-index: 0;
+}
+
+.login-input:focus, .login-input:active {
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: #3b52ce;
+  font-weight: 600;
+}
+
+.login-btn {
+  background-color: #3b52ce;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  width: 30%;
+}
+
+@media screen and (max-width: 768px) {
+  .umh-logo {
+    height: 45%;
+  }
+  
+  .form-title {
+    font-size: x-large;
+  }
 }
