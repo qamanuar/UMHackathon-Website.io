@@ -2164,6 +2164,14 @@ a.contact-link:hover {
   height: 100dvh;
 }
 
+.selectDisable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 .umh-web-link {
   display: flex;
 }
@@ -2175,45 +2183,39 @@ a.contact-link:hover {
 }
 
 .login-form {
-  /* background-color: #afcfff; */
-  /* background-image: url(../images/login-form-background.png); */
-  background-size: cover;
-  color: #fff;
   align-content: center;
-  border-radius: 70px;
   padding: 10px auto;
   margin: 20px auto;
   width: 45%;
   height: 50%;
-  z-index: 1;
 }
 
-.login-form1 {
+.login-form-background {
   position: absolute;
+  opacity: 0.7;
   top: calc(30% - 0.15rem);
+  z-index: 0;
 }
 
-.login-form-img {
+.login-form-background-img {
   background-image: url(../images/login-form-background.png);
   background-size: cover;
   border-radius: 70px;
   border: none;
-  opacity: 0.7;
   width: 100%;
   height: 100%;
-  z-index: 0;
 }
 
 .form-box {
-  opacity: 200%;
   display: flex;
-  position: space-around;
   flex-direction: column;
+  position: space-around;
 }
 
 .form-item {
   margin: 20px auto;
   color: #fff;
+  z-index: 1;
 }
 
 .form-item:not(.form-title, .login-icon) {
@@ -2230,24 +2232,13 @@ a.contact-link:hover {
 }
 
 .login-icon {
-  background-color: #afcfff;
-  align-self: center;
   width: 45px;
   padding: 10px;
   margin: 20px -45px 20px auto;
   border-width: 10px;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
-  border-color: #afcfff;
   z-index: 1;
-}
-
-.selectDisable {
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
 .login-input {
@@ -2280,9 +2271,24 @@ a.contact-link:hover {
   width: 30%;
 }
 
+@media screen and (max-width: 1024px) {
+  .umh-logo {
+    height: 55px;
+  }
+
+  .login-form {
+    width: 60%;
+  }
+  
+}
+
 @media screen and (max-width: 768px) {
   .umh-logo {
-    height: 45%;
+    height: 45px;
+  }
+
+  .login-form {
+    width: 80%;
   }
   
   .form-title {
