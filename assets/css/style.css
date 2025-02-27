@@ -1983,3 +1983,9 @@ a.contact-link:hover {
   color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
 }
+
+label {
+  display: inline-block; /* Ensure labels are visible */
+  color: #000; /* Set a visible text color */
+  font-size: 1rem; /* Ensure a readable font size */
+}
