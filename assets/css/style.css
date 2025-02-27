@@ -2289,3 +2289,101 @@ a.contact-link:hover {
     font-size: x-large;
   }
 }
+
+/*===================================== SUBMISSION PAGE =====================================*/
+.outer-container-submit {
+  background-color: #000;
+  background-image: url(../images/login-background.png); 
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+.umh-logo-submit {
+  align-self: center;
+  margin: 20px auto;
+  height: 75px;
+}
+
+.submit-form {
+  /* background-color: #afcfff; */
+  /* background-image: url(../images/login-form-background.png); */
+  background-size: cover;
+  color: #fff;
+  align-content: center;
+  border-radius: 70px;
+  padding: 10px auto;
+  margin: 20px auto;
+  width: 45%;
+  height: 50%;
+  z-index: 1;
+}
+
+.form-box-submit {
+  opacity: 200%;
+  display: flex;
+  position: space-around;
+  flex-direction: column;
+}
+
+.form-item-submit {
+  margin: 20px auto;
+  color: #fff;
+}
+
+.form-item-submit:not(.form-title, .login-icon) {
+  box-shadow: 0 15px 10px #00000050;
+}
+
+.form-title-submit {
+  margin-left: 15%;
+  font-size: xx-large;
+}
+
+.input-box-submit {
+  display: flex;
+}
+
+.submit-input {
+  display: flex;
+  background-color: #ffffff;
+  color: #000000;
+  width: 70%;
+  padding: 10px 10px 10px 45px;
+  border: none;
+  border-radius: 20px;
+  margin: 20px auto 20px 0;
+  z-index: 0;
+}
+
+.submit-input:focus, .submit-input:active {
+  outline: none;
+}
+.form-label {
+  width: 100px; /* Adjust width as needed */
+  text-align: left;
+  margin-right: 10px;
+}
+
+.submit-btn {
+  background-color: #3b52ce;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  width: 30%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .umh-logo-submit {
+    height: 45%;
+  }
+  
+  .form-title-submit {
+    font-size: x-large;
+  }
+}
