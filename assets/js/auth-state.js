@@ -3,6 +3,7 @@ import { signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth
 
 document.addEventListener('DOMContentLoaded', () => {
   const loggedInSection = document.getElementById('logged-in');
+  const loggedInSubmission = document.getElementById('logged-in-submission');
   const loggedOutSection = document.getElementById('logged-out');
   const logoutButton = document.getElementById('logout-btn');
   const userEmail = document.getElementById('user-email');
@@ -13,12 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (user) {
       // User is signed in
       loggedInSection.classList.remove('d-none');
+      loggedInSubmission.classList.remove('d-none');
       logoutButton.classList.remove('d-none');
       loggedOutSection.classList.add('d-none');
       userEmail.textContent = user.email; // Display user's email
     } else {
       // User is signed out
       loggedInSection.classList.add('d-none');
+      loggedInSubmission.classList.add('d-none');
       logoutButton.classList.add('d-none');
       loggedOutSection.classList.remove('d-none');
     }
