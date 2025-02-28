@@ -253,6 +253,14 @@ img {
   color: rgb(117, 99, 189);
 }
 
+#sign-out-button {
+  border-color: #3b52ce;
+}
+
+#sign-out-button:hover {
+  background-color: #2a3ea0;
+}
+
 /*===================================== HOMEPAGE SECTION =====================================*/
 
 #home {
@@ -2489,8 +2497,6 @@ a.contact-link:hover {
 }
 
 .submit-form {
-  /* background-color: #afcfff; */
-  /* background-image: url(../images/login-form-background.png); */
   background-size: cover;
   color: #fff;
   align-content: center;
