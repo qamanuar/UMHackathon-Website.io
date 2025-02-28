@@ -2317,18 +2317,19 @@ a.contact-link:hover {
 /*===================================== SUBMISSION PAGE =====================================*/
 .outer-container-submit {
   background-color: #000;
-  background-image: url(../images/login-background.png); 
+  background-image: url(../images/UMH25-submission-page.png); 
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100dvh;
+  
 }
 
 .umh-logo-submit {
   align-self: center;
-  margin: 20px auto;
+  margin-top: -80px; /* Move logo higher */
   height: 75px;
 }
 
@@ -2354,7 +2355,7 @@ a.contact-link:hover {
 }
 
 .form-item-submit {
-  margin: 20px auto;
+  margin: 10px auto;
   color: #fff;
 }
 
@@ -2363,42 +2364,70 @@ a.contact-link:hover {
 }
 
 .form-title-submit {
-  margin-left: 15%;
+  margin-left: 15% auto ;
   font-size: xx-large;
+  align-self: center;
 }
 
 .input-box-submit {
   display: flex;
+  align-items: center; /* Align label & input vertically */
+  justify-content: flex-start; /* Align them to the left */
+  gap: 10px; /* Space between label & input */
+  width: 100%; /* Ensure they stretch properly */
+  margin-left: -50px;
 }
+
 
 .submit-input {
   display: flex;
   background-color: #ffffff;
   color: #000000;
-  width: 70%;
+  
   padding: 10px 10px 10px 45px;
   border: none;
-  border-radius: 20px;
+
   margin: 20px auto 20px 0;
   z-index: 0;
+  width: 80%; /* Adjust width as needed */
+  height: 50px; /* Adjust height for the Group Name input */
+  padding: 15px 20px;
+  border-radius: 30px; /* Make edges rounder */
+  font-size: 16px;
+}
+.link-input {
+  height: 250px; /* Adjust height to match the design */
+  border-radius: 30px; /* Keep it round */
+  resize: none; /* Prevent resizing if not needed */
 }
 
 .submit-input:focus, .submit-input:active {
   outline: none;
 }
 .form-label {
-  width: 100px; /* Adjust width as needed */
-  text-align: left;
+  width: 120px; /* Adjust as needed */
+  text-align: right; /* Align text to the right */
   margin-right: 10px;
+  
 }
-
+.submit-input, .link-input {
+  flex-grow: 1; /* Make inputs take remaining space */
+  width: auto; /* Prevent fixed widths */
+}
 .submit-btn {
   background-color: #3b52ce;
   border: none;
   border-radius: 25px;
   padding: 10px;
   width: 30%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.submit-btn:hover {
+  background-color: #2a3ea0; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge */
+}
+
 
 
 
