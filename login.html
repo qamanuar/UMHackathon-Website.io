@@ -1,34 +1,28 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-
-    <link rel="icon" href="assets\images\umh25-logo.png" type="image/png" />
+    <link rel="icon" href="assets/images/umh25-logo.png" type="image/png" />
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v6.3.0/css/all.css"
-    />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
     <div class="outer-container selectDisable">
         
-        <a href="" class="umh-web-link">
-            <img class="umh-logo" src="./assets/images/umh-logo2025-white-cropped.png" alt="UMH logo" height="10"/>
+        <a href="index.html" class="umh-web-link" draggable="false">
+            <img class="umh-logo" src="./assets/images/umh-logo2025-white-cropped.png" alt="UMH logo" height="10" draggable="false"/>
         </a>
         
-        <div class="login-form login-form1">
-            <div class="login-form-img"></div>
-        </div>
-        <div class="login-form login-form2">
-            <div class="form-box">
+        <div class="login-form">
+            <div class="login-form login-form-background">
+                <div class="login-form-background-img"></div>
+            </div>
+            <form class="form-box">
                 <h1 class="form-item form-title">Get Started</h1>
                 <div class="input-box">
                     <img class="login-icon alias-icon form-item" src="./assets/images/login-alias-icon.png" alt="" draggable="false"/>
@@ -39,11 +33,9 @@
                     <input class="pswd-input login-input form-item" type="password" placeholder="Password"/>
                 </div>
                 <button class="login-btn form-item" type="submit">Log in</button>
-            </div>
+            </form>
         </div>
-
     </div>
-
-    <script src="./assets/js/login.js"></script>
+    <script type="module" src="./assets/js/login.js"></script>
 </body>
 </html>
