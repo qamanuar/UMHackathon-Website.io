@@ -253,12 +253,22 @@ img {
   color: rgb(117, 99, 189);
 }
 
-#sign-out-button {
-  border-color: #3b52ce;
+.navbar .nav-link {
+  color: #ffffff; /* White text for visibility */
+  font-weight: 500; /* Slightly bold for emphasis */
 }
 
-#sign-out-button:hover {
-  background-color: #2a3ea0;
+/* Style for the Sign Out button */
+#logout-btn .btn-outline-danger {
+  color: #ffffff; /* White text for better contrast */
+  border-color: #3b52ce; /* Bright red border */
+  background-color: transparent; /* Transparent background */
+}
+
+#logout-btn .btn-outline-danger:hover {
+  color: #ffffff; /* Keep white text on hover */
+  background-color: #3b52ce; /* Fill with bright red on hover */
+  border-color: #3b52ce; /* Keep border consistent */
 }
 
 /*===================================== HOMEPAGE SECTION =====================================*/
@@ -2457,24 +2467,6 @@ a.contact-link:hover {
   .form-title {
     font-size: x-large;
   }
-}
-
-.navbar .nav-link {
-  color: #ffffff; /* White text for visibility */
-  font-weight: 500; /* Slightly bold for emphasis */
-}
-
-/* Style for the Sign Out button */
-#logout-btn .btn-outline-danger {
-  color: #ffffff; /* White text for better contrast */
-  border-color: #ff4d4d; /* Bright red border */
-  background-color: transparent; /* Transparent background */
-}
-
-#logout-btn .btn-outline-danger:hover {
-  color: #ffffff; /* Keep white text on hover */
-  background-color: #ff4d4d; /* Fill with bright red on hover */
-  border-color: #ff4d4d; /* Keep border consistent */
 }
 
 /*===================================== SUBMISSION PAGE =====================================*/
