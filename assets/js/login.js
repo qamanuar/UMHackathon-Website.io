@@ -12,7 +12,7 @@ document.querySelector('.login-btn').addEventListener('click', async function(ev
         console.log('User signed in:', userCredential.user.email);
         
         // Navigate to dashboard
-        window.location.href = 'index.html';
+        window.location.href = '/index.html';
     } catch (error) {
         console.error('Login error:', error.code, error.message);
         alert('Login failed: ' + error.message);
