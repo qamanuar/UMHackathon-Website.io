@@ -1641,7 +1641,7 @@ span.text {
   padding-top: 7rem;
   height: 120vh;
   background: linear-gradient(to bottom, 
-  rgba(0, 0, 0, 0) 50%, /* Transparent until 30% */
+  rgba(0, 0, 0, 0) 30%, /* Transparent until 30% */
   rgba(24, 41, 85, 0.8) 60%, /* Midpoint */
   #4761A7 100% /* Full color at the bottom */
   );
@@ -1744,7 +1744,7 @@ p {
 .coming-soon-container {
   position:relative;
   display: flex;
-  margin-top: 120px;
+  margin-top: 30px;
   flex-direction: column;
   align-items: center;
   padding: 20px;
