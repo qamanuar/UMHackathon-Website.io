@@ -1535,6 +1535,9 @@ span.text {
   .content1 .dotted_line {
     top: calc(-25% - 0.5rem);
   }
+  .content4 .dotted_line, .content5 .dotted_line, .content6 .dotted_line {
+    top: calc(-25%);
+  }
   /* count down sector */
   .count_down {
     display: flex;
