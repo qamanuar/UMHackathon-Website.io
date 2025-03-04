@@ -2668,3 +2668,19 @@ a.contact-link:hover {
     font-size: x-large;
   }
 }
+
+.input-box {
+  position: relative; /* Required for absolute positioning of child elements */
+  width: 100%; /* Ensure the container spans the full width */
+}
+
+.eye-icon {
+  position: absolute;
+  right: 120px; /* Adjust based on your design */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  cursor: pointer;
+  color: #aaa; /* Change color as needed */
+  font-size: 18px; /* Adjust size as needed */
+  z-index: 2; /* Ensure the icon is above other elements */
+}
