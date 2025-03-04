@@ -1519,8 +1519,8 @@ span.text {
   .content {
     width: 10rem;
   }
-  .content3 p {
-    max-width: 90%;
+  .content p {
+    width: 85%;
   }
   .line_section{
     font-size: 0.8rem;
@@ -1533,9 +1533,9 @@ span.text {
     top: calc(-25% - 0.75rem);
   }
   .content1 .dotted_line {
-    top: calc(-25% - 0.5rem);
+    top: calc(-25% + 0.25rem);
   }
-  .content4 .dotted_line, .content5 .dotted_line, .content6 .dotted_line {
+  .content2 .dotted_line, .content4 .dotted_line, .content5 .dotted_line, .content6 .dotted_line {
     top: calc(-25%);
   }
   /* count down sector */
