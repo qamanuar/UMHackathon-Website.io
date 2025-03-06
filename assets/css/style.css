@@ -2069,6 +2069,10 @@ p {
   color: #c0c0c0;
 }
 
+.benefit-in-kind-title {
+  color: #c0c0c0;
+}
+
 .platinum-title + .wrapper .itemRight {
   background-image: url('balaenaquant.png');
   background-size: cover;
