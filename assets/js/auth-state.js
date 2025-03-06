@@ -1,6 +1,29 @@
 import { auth } from './firebase-config.js';
 import { signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAwlBov2rDNX5rOlxQsEwGstTl8HA8gh2M",
+    authDomain: "umhackathon2025.firebaseapp.com",
+    databaseURL: "https://umhackathon2025-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "umhackathon2025",
+    storageBucket: "umhackathon2025.firebasestorage.app",
+    messagingSenderId: "856480389899",
+    appId: "1:856480389899:web:b02cce20128e274962e00e",
+    measurementId: "G-Z7P123YH56"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
 document.addEventListener('DOMContentLoaded', () => {
   const loggedInSection = document.getElementById('logged-in');
   const loggedInSubmission = document.getElementById('logged-in-submission');
