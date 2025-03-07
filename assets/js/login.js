@@ -16,7 +16,7 @@ document.querySelector('.login-btn').addEventListener('click', async function(ev
         sessionStorage.setItem('userEmail', userCredential.user.email);
 
         // Redirect to dashboard
-        window.location.href = '/index.html';
+        window.location.href = './';
     } catch (error) {
         console.error('Login error:', error.code, error.message);
         alert('Login failed: ' + error.message);
