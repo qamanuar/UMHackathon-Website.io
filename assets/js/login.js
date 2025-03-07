@@ -10,7 +10,7 @@ document.querySelector('.login-btn').addEventListener('click', async function(ev
 
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        console.log('User signed in:', userCredential.user.email);
+        // console.log('User signed in:', userCredential.user.email);
 
         // Store user email in session storage
         sessionStorage.setItem('userEmail', userCredential.user.email);
