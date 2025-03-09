@@ -18,40 +18,47 @@ import { auth, db } from './firebase-config.js';
 // const app = initializeApp(firebaseConfig);
 // const db = getFirestore(app);
 
-// Redirect to login page if user is not signed in, prevent user from accessing this page while not logged in
+// Redirect to login page if user is not signed in
 auth.onAuthStateChanged((user) => {
-  if(!user) {
+    if (!user) {
       window.location.href = "/login";
-  }
-});
-
-// Form submission handling
-document.addEventListener("DOMContentLoaded", function () {
-    const submitBtn = document.querySelector(".submit-btn");
-    
-    submitBtn.addEventListener("click", async function (event) {
-        event.preventDefault(); // Prevent page reload
-        
-        const groupName = document.querySelector(".group-name-input").value.trim();
-        const gdriveLink = document.querySelector(".link-input").value.trim();
-        
-        if (groupName === "" || gdriveLink === "") {
-            alert("Please fill in all fields.");
-            return;
-        }
-        
-        try {
-            await addDoc(collection(db, "submissions"), {
-                group: groupName,
-                link: gdriveLink,
-                timestamp: new Date()
-            });
-            alert("Submission successful!");
-            document.querySelector(".group-name-input").value = "";
-            document.querySelector(".link-input").value = "";
-        } catch (error) {
-            console.error("Error submitting data: ", error);
-            alert("Submission failed. Please try again.");
-        }
-    });
-});
+    }
+  });
+  
+  // Form submission handling
+  document.addEventListener("DOMContentLoaded", function () {
+      const submitBtn = document.querySelector(".submit-btn");
+      
+      submitBtn.addEventListener("click", async function (event) {
+          event.preventDefault(); // Prevent page reload
+          
+          const groupName = document.querySelector(".group-name-input").value.trim();
+          const gdriveLink = document.querySelector(".link-input").value.trim();
+          const user = auth.currentUser; // Get the logged-in user
+          
+          if (groupName === "" || gdriveLink === "") {
+              alert("Please fill in all fields.");
+              return;
+          }
+  
+          if (!user) {
+              alert("User not authenticated.");
+              return;
+          }
+          
+          try {
+              await addDoc(collection(db, "submissions"), {
+                  group: groupName,
+                  link: gdriveLink,
+                  email: user.email, // Save user's email
+                  timestamp: new Date()
+              });
+              alert("Submission successful!");
+              document.querySelector(".group-name-input").value = "";
+              document.querySelector(".link-input").value = "";
+          } catch (error) {
+              console.error("Error submitting data: ", error);
+              alert("Submission failed. Please try again.");
+          }
+      });
+  });
