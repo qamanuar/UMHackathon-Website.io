@@ -2484,6 +2484,9 @@ a.contact-link:hover {
 
 .input-box {
   display: flex;
+  align-items: center; /* Vertically center items */
+  position: relative; /* Make the container a reference point for absolute positioning */
+  width: 100%; /* Ensure the input box takes full width */
 }
 
 .login-icon {
@@ -2500,13 +2503,14 @@ a.contact-link:hover {
   display: flex;
   background-color: #afcfff;
   color: #3b52ce;
-  width: 70%;
-  padding: 10px 10px 10px 45px;
+  width: 70%; /* Keep the width as it is */
+  padding: 10px 40px 10px 45px; /* Add padding on the right for the eye icon */
   border: none;
   border-radius: 20px;
   font-weight: bold;
   margin: 20px auto 20px 0;
   z-index: 0;
+  position: relative; /* Make the input field a reference point for the eye icon */
 }
 
 .login-input:focus, .login-input:active {
@@ -2526,6 +2530,18 @@ a.contact-link:hover {
   width: 30%;
 }
 
+.eye-icon {
+  position: absolute;
+  right: 120px; /* Position the eye icon inside the input field */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  cursor: pointer;
+  color: #3b52ce; /* Match the input placeholder color */
+  font-size: 18px; /* Adjust size as needed */
+  z-index: 2; /* Ensure the icon is above other elements */
+}
+
+/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 1024px) {
   .umh-logo {
     height: 55px;
@@ -2534,7 +2550,10 @@ a.contact-link:hover {
   .login-form {
     width: 60%;
   }
-  
+
+  .eye-icon {
+    right: 120px; /* Position the eye icon inside the input field */
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -2545,9 +2564,31 @@ a.contact-link:hover {
   .login-form {
     width: 80%;
   }
-  
+
   .form-title {
     font-size: x-large;
+  }
+
+  .eye-icon {
+    right: 100px; /* Position the eye icon inside the input field */
+  }
+}
+
+@media screen and (max-width: 624px) {
+
+  .eye-icon {
+    right: 85px; /* Adjust position for very small screens */
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .login-input {
+    padding-right: 35px; /* Reduce padding for very small screens */
+  }
+
+  .eye-icon {
+    right: 55px; /* Adjust position for very small screens */
   }
 }
 
@@ -2681,13 +2722,3 @@ a.contact-link:hover {
   width: 100%; /* Ensure the container spans the full width */
 }
 
-.eye-icon {
-  position: absolute;
-  right: 120px; /* Adjust based on your design */
-  top: 50%;
-  transform: translateY(-50%); /* Center vertically */
-  cursor: pointer;
-  color: #aaa; /* Change color as needed */
-  font-size: 18px; /* Adjust size as needed */
-  z-index: 2; /* Ensure the icon is above other elements */
-}
