@@ -2044,13 +2044,6 @@ p {
   color: #c0c0c0;
 }
 
-.platinum-title + .wrapper .itemRight {
-  background-image: url('balaenaquant.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .wrapper {
   margin-top: 2rem;
   width: 90%;
@@ -2070,6 +2063,13 @@ p {
 }
 
 .wrapper .itemRight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.wrapper .itemLeft img {
   width: 100%;
   height: 100%;
   object-fit: cover;
