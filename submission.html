@@ -28,7 +28,15 @@
                 <h1 class="form-item-submit form-title-submit">PRELIMINARY SUBMISSION</h1>
                 <div class="input-box-submit">
                     <label for="group-name" class="form-label">Group Name</label>
-                    <input class="group-name-input submit-input form-item-submit" type="text"/>
+                    <div class="dropdown">
+                        <input id="submit-groupname-input" class="group-name-input submit-input form-item-submit" type="text" name="group-name" placeholder="Select Team"/>
+                        <div id="dropdown_list" class="dropdown_list">
+                            <div class="dropdown_item" data-value="t1">ababa</div>
+                            <div class="dropdown_item" data-value="t2">tea two</div>
+                            <div class="dropdown_item" data-value="t3">Tem 3</div>
+                            <div class="dropdown_item" data-value="t4">Tem 4</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="input-box-submit">
                     <label for="file-upload" class="form-label">Gdrive Link</label>

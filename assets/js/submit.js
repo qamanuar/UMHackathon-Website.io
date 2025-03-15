@@ -62,3 +62,30 @@ auth.onAuthStateChanged((user) => {
           }
       });
   });
+
+
+const submitGroupnameInput = document.getElementById("submit-groupname-input");
+submitGroupnameInput.addEventListener("focusin", function() {
+    document.getElementById("dropdown_list").classList.toggle("show");
+});
+submitGroupnameInput.addEventListener("focusout", function() {
+    document.getElementById("dropdown_list").classList.toggle("show");
+});
+
+submitGroupnameInput.addEventListener("input", searchGroupname);
+
+function searchGroupname() {
+    const input = document.getElementById("submit-groupname-input");
+    const filter = input.value.toUpperCase();
+    const list = document.getElementById("dropdown_list");
+    const items = list.getElementsByClassName("dropdown_item");
+    for (let i = 0; i < items.length; i++) {
+        let item  = items[i];
+        let txtValue = item.textContent || item.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            items[i].style.display = "block";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}
