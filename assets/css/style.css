@@ -2670,18 +2670,67 @@ a.contact-link:hover {
   display: flex;
   background-color: #ffffff;
   color: #000000;
-  
   padding: 10px 10px 10px 45px;
   border: none;
-
   margin: 20px auto 20px 0;
   z-index: 0;
-  width: 80%; /* Adjust width as needed */
   height: 50px; /* Adjust height for the Group Name input */
   padding: 15px 20px;
-  border-radius: 30px; /* Make edges rounder */
   font-size: 16px;
+
+  border-radius:25px; /* Make edges rounder */
+  transition: border-radius 0.2s ease;
 }
+
+.dropdown {
+  display: flex;
+  width: 80%;
+}
+
+#submit-groupname-input:focus, #submit-groupname-input:active {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: border-bottom-right-radius border-bottom-left-radius 0.2s ease;
+}
+
+.dropdown_list {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  top: calc(100% - 20px);
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.dropdown_item {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+.dropdown_item:hover {
+  background-color: #f1f1f1;
+}
+.show {
+  display: block;
+  height: 150px;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
 .link-input {
   height: 250px; /* Adjust height to match the design */
   border-radius: 30px; /* Keep it round */
