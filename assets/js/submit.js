@@ -64,6 +64,7 @@ auth.onAuthStateChanged((user) => {
   });
 
 
+// Show dropdown list when input is focused
 const submitGroupnameInput = document.getElementById("submit-groupname-input");
 submitGroupnameInput.addEventListener("focusin", function() {
     document.getElementById("dropdown_list").classList.toggle("show");
