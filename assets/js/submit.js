@@ -62,3 +62,12 @@ auth.onAuthStateChanged((user) => {
           }
       });
   });
+
+
+const submitGroupnameInput = document.getElementById("submit-groupname-input");
+submitGroupnameInput.addEventListener("focusin", function() {
+    document.getElementById("dropdown_list").classList.toggle("show");
+});
+submitGroupnameInput.addEventListener("focusout", function() {
+    document.getElementById("dropdown_list").classList.toggle("show");
+});
