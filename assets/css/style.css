@@ -2692,6 +2692,10 @@ a.contact-link:hover {
   transition: border-bottom-right-radius border-bottom-left-radius 0.2s ease;
 }
 
+#submit-groupname-input:not(:focus):not(:active) {
+  transition: border-bottom-right-radius 0.2s ease 0.2s, border-bottom-left-radius 0.2s ease 0.2s;
+}
+
 .dropdown_list {
   display: none;
   position: absolute;
@@ -2726,6 +2730,14 @@ a.contact-link:hover {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 

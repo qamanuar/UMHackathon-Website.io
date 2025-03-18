@@ -67,28 +67,38 @@ auth.onAuthStateChanged((user) => {
 // Show dropdown list when input is focused
 const submitGroupnameInput = document.getElementById("submit-groupname-input");
 submitGroupnameInput.addEventListener("focusin", function() {
-    document.getElementById("dropdown_list").classList.toggle("show");
+    document.getElementById("dropdown_list").classList.add("show");
 });
 submitGroupnameInput.addEventListener("focusout", function() {
-    document.getElementById("dropdown_list").classList.toggle("show");
+    setTimeout(() => {
+        document.getElementById("dropdown_list").classList.remove("show");
+    }
+    , 200);
 });
 
-
-
+// Filter groupnames in dropdown list
 submitGroupnameInput.addEventListener("input", searchGroupname);
-
 function searchGroupname() {
     const input = document.getElementById("submit-groupname-input");
-    const filter = input.value.toUpperCase();
+    const filter = input.value.toLowerCase();
     const list = document.getElementById("dropdown_list");
     const items = list.getElementsByClassName("dropdown_item");
     for (let i = 0; i < items.length; i++) {
         let item  = items[i];
         let txtValue = item.textContent || item.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            items[i].style.display = "block";
+        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+            item.style.display = "";
         } else {
-            items[i].style.display = "none";
+            item.style.display = "none";
         }
     }
 }
+
+// Select groupname from dropdown list
+const dropdownList = document.getElementById("dropdown_list");
+const dropdownItems = document.getElementsByClassName("dropdown_item");
+Array.from(dropdownItems).forEach(item => {
+    item.onclick = function() {
+        document.getElementById("submit-groupname-input").value = item.innerHTML;
+    }
+});
