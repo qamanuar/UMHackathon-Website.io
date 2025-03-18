@@ -2,93 +2,103 @@
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 import { auth, db } from './firebase-config.js';
 
-// Commented out the firebase below because db can be imported from firebase-config.js for easier management
-
-// const firebaseConfig = {
-//     apiKey: "AIzaSyAwlBov2rDNX5rOlxQsEwGstTl8HA8gh2M",
-//     authDomain: "umhackathon2025.firebaseapp.com",
-//     databaseURL: "https://umhackathon2025-default-rtdb.asia-southeast1.firebasedatabase.app",
-//     projectId: "umhackathon2025",
-//     storageBucket: "umhackathon2025.firebasestorage.app",
-//     messagingSenderId: "856480389899",
-//     appId: "1:856480389899:web:b02cce20128e274962e00e",
-//     measurementId: "G-Z7P123YH56"
-//   };
-
-// const app = initializeApp(firebaseConfig);
-// const db = getFirestore(app);
 
 // Redirect to login page if user is not signed in
 auth.onAuthStateChanged((user) => {
     if (!user) {
       window.location.href = "/login";
     }
-  });
+});
   
   // Form submission handling
-  document.addEventListener("DOMContentLoaded", function () {
-      const submitBtn = document.querySelector(".submit-btn");
-      
-      submitBtn.addEventListener("click", async function (event) {
-          event.preventDefault(); // Prevent page reload
-          
-          const groupName = document.querySelector(".group-name-input").value.trim();
-          const gdriveLink = document.querySelector(".link-input").value.trim();
-          const user = auth.currentUser; // Get the logged-in user
-          
-          if (groupName === "" || gdriveLink === "") {
-              alert("Please fill in all fields.");
-              return;
-          }
-  
-          if (!user) {
-              alert("User not authenticated.");
-              return;
-          }
-          
-          try {
-              await addDoc(collection(db, "submissions"), {
-                  group: groupName,
-                  link: gdriveLink,
-                  email: user.email, // Save user's email
-                  timestamp: new Date()
-              });
-              alert("Submission successful!");
-              document.querySelector(".group-name-input").value = "";
-              document.querySelector(".link-input").value = "";
-          } catch (error) {
-              console.error("Error submitting data: ", error);
-              alert("Submission failed. Please try again.");
-          }
-      });
-  });
+document.addEventListener("DOMContentLoaded", async function () {
+    const submitBtn = document.querySelector(".submit-btn");
+    
+    submitBtn.addEventListener("click", async function (event) {
+        event.preventDefault(); // Prevent page reload
+        
+        const groupName = document.querySelector(".group-name-input").value.trim();
+        const gdriveLink = document.querySelector(".link-input").value.trim();
+        const user = auth.currentUser; // Get the logged-in user
+        
+        if (groupName === "" || gdriveLink === "") {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        if (!user) {
+            alert("User not authenticated.");
+            return;
+        }
+        
+        try {
+            await addDoc(collection(db, "submissions"), {
+                group: groupName,
+                link: gdriveLink,
+                email: user.email, // Save user's email
+                timestamp: new Date()
+            });
+            alert("Submission successful!");
+            document.querySelector(".group-name-input").value = "";
+            document.querySelector(".link-input").value = "";
+        } catch (error) {
+            console.error("Error submitting data: ", error);
+            alert("Submission failed. Please try again.");
+        }
+    });
 
 
-// Show dropdown list when input is focused
-const submitGroupnameInput = document.getElementById("submit-groupname-input");
-submitGroupnameInput.addEventListener("focusin", function() {
-    document.getElementById("dropdown_list").classList.toggle("show");
-});
-submitGroupnameInput.addEventListener("focusout", function() {
-    document.getElementById("dropdown_list").classList.toggle("show");
-});
+    const dropdownList = document.getElementById("dropdown_list");
+    const dropdownItems = document.getElementsByClassName("dropdown_item");
+    const submitGroupnameInput = document.getElementById("submit-groupname-input");
 
+    // // Get group names from Firestore Database and add to dropdown list
+    // try{
+    //     const docRef = collection(db, "groups_names");
+    //     const docSnap = await getDocs(docRef);
+    //     docSnap.forEach((doc) => {
+    //         const groupName = doc.data().group;
+    //         const dropdownItem = document.createElement("div");
+    //         dropdownItem.className = "dropdown_item";
+    //         dropdownItem.textContent = groupName;
+    //         dropdownList.appendChild(dropdownItem);
+    //     });
+    // } catch (e) {
+    //     console.error("Error getting group names: ", e);
+    // }
+    
 
+    // Show dropdown list when input is focused, hide when input is not focused
+    submitGroupnameInput.addEventListener("focusin", function() {
+        document.getElementById("dropdown_list").classList.add("show");
+    });
+    submitGroupnameInput.addEventListener("focusout", function() {
+        setTimeout(() => {
+            document.getElementById("dropdown_list").classList.remove("show");
+        }
+        , 200);
+    });
 
-submitGroupnameInput.addEventListener("input", searchGroupname);
-
-function searchGroupname() {
-    const input = document.getElementById("submit-groupname-input");
-    const filter = input.value.toUpperCase();
-    const list = document.getElementById("dropdown_list");
-    const items = list.getElementsByClassName("dropdown_item");
-    for (let i = 0; i < items.length; i++) {
-        let item  = items[i];
-        let txtValue = item.textContent || item.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            items[i].style.display = "block";
-        } else {
-            items[i].style.display = "none";
+    // Filter groupnames in dropdown list
+    submitGroupnameInput.addEventListener("input", searchGroupname);
+    function searchGroupname() {
+        const filter = submitGroupnameInput.value.toLowerCase();
+        for (let i = 0; i < dropdownItems.length; i++) {
+            let item  = dropdownItems[i];
+            let txtValue = item.textContent || item.innerText;
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                item.style.display = "";
+            } else {
+                item.style.display = "none";
+            }
         }
     }
-}
+
+    // Select groupname from dropdown list
+    Array.from(dropdownItems).forEach(item => {
+        item.onclick = function() {
+            document.getElementById("submit-groupname-input").value = item.innerHTML;
+        }
+    });
+
+});
