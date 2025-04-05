@@ -17,7 +17,7 @@ let interval = 5000;
 valueDisplays.forEach((valueDisplay) => {
     let startValue = 0;
     let endValue = parseInt(valueDisplay.getAttribute('data-val'));
-    console.log(endValue);
+    // console.log(endValue);
     let duration = Math.floor(interval / endValue);
     let counter = setInterval(function () {
         startValue += 1;
@@ -53,7 +53,7 @@ function scrollHandler(e) {
     const lineRect = line.getBoundingClientRect(); // const lineHeight = lineRect.bottom - lineRect.top;
   
     const dist = targetY - timelineRect.top;
-    console.log(dist);
+    // console.log(dist);
   
     if (down && !full) {
       set = Math.max(set, dist);

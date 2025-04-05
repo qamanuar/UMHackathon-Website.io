@@ -2244,7 +2244,7 @@ p {
 .media-partner_section {
   padding-top: 100px;
   padding-bottom: 100px;
-  height: 130vh;
+  height: 90dvh;
   align-content: center;
 }
 
@@ -2258,23 +2258,25 @@ p {
 
 #media-partner-carousel img {
   padding: 1rem;
-  max-height: 15rem;
+  max-height: 25%;
   border-radius: 2rem;
 }
 
 #media-partner-carousel h3 {
   max-width: 70%;
   justify-self: center;
+  font-size: 1.5rem;
 }
 
 .media-partner-description {
   text-align: justify;
   justify-self: center;
   max-width: 70%;
+  font-size: 90%;
 }
 
 .contact-us {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 #contact-detail {
@@ -2284,16 +2286,28 @@ p {
 
 .carousel-item p:not(.media-partner-description, .contact-us) {
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 600;
 }
 
 @media screen and (max-width: 900px){
+  .media-partner_section {
+    height: 120dvh;
+  }
+  #media-partner-carousel {
+    overflow-y: scroll;
+  }
   #contact-detail {
     flex-direction: column;
   }
+  .contact-us {
+    font-size: 1rem;
+  }
+  #media-partner-carousel img {
+    max-height: 15%;
+  }
   #media-partner-carousel h3 {
-    font-size: 150%;
+    font-size: 140%;
   }
 }
 
