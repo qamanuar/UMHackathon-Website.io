@@ -1,5 +1,5 @@
 import { auth } from '../../firebase-config.js';
-import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
 // Add event listener for login button
 document.querySelector('.login-btn').addEventListener('click', async function(event) {
