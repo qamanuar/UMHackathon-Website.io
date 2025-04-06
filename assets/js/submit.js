@@ -1,6 +1,7 @@
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
-import { auth, db } from './firebase-config.js';
+import { auth, db } from '../../firebase-config.js';
+
 
 
 // Redirect to login page if user is not signed in
