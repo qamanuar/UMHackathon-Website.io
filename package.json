@@ -1,5 +1,27 @@
 {
+  "name": "umhackathon-website.io",
+  "version": "1.0.0",
+  "description": "UMHackathon 2025 website will be revamped with a new looks, according to the Creation Team design, Technical Team will in charge of implementing the code, happy coding!",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qamanuar/UMHackathon-Website.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qamanuar/UMHackathon-Website.io/issues"
+  },
+  "homepage": "https://github.com/qamanuar/UMHackathon-Website.io#readme",
   "dependencies": {
-    "firebase": "^11.4.0"
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "firebase": "^11.6.0"
   }
 }
