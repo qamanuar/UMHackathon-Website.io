@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       // Clear form fields
       document.querySelector(".group-name-input").value = "";
       document.querySelector(".link-input").value = "";
+      document.querySelector(".domain-input").value = "";
     } catch (error) {
       console.error("Error submitting data: ", error);
       alert("Submission failed. Please try again.");
