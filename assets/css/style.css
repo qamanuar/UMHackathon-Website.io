@@ -2887,7 +2887,13 @@ a.contact-link:hover {
 
 
 .link-input {
-  height: 250px; /* Adjust height to match the design */
+  height: 150px; /* Adjust height to match the design */
+  border-radius: 30px; /* Keep it round */
+  resize: none; /* Prevent resizing if not needed */
+}
+
+.domain-input {
+  height: 50px; /* Adjust height to match the design */
   border-radius: 30px; /* Keep it round */
   resize: none; /* Prevent resizing if not needed */
 }

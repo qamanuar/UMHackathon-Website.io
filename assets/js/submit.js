@@ -22,9 +22,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const groupName = document.querySelector(".group-name-input").value.trim();
     const gdriveLink = document.querySelector(".link-input").value.trim();
+    const domainNum = document.querySelector(".domain-input").value.trim();
     const user = auth.currentUser;
 
-    if (groupName === "" || gdriveLink === "") {
+    if (groupName === "" || gdriveLink === "" || domainNum === "") {
       alert("Please fill in all fields.");
       return;
     }
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       await addDoc(collection(db, "submissions"), {
         group: groupName,
         link: gdriveLink,
+        domain: domainNum,
         email: user.email,
         timestamp: new Date()
       });
