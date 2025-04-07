@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/qamanuar/UMHackathon-Website.io#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "firebase": "^11.6.0"

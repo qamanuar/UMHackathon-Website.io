@@ -1,26 +1,15 @@
-// index.js
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import dotenv from 'dotenv';
-import { app as firebaseApp, auth, db } from './firebase-config.js';
+import { supabase } from './supabaseClient.js';
 
-dotenv.config();
+async function testDatabaseConnection() {
+  const { data, error } = await supabase
+    .from('Participants')  // your table name
+    .select('*');          // select all rows
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+  if (error) {
+    console.error('Failed to connect to Participants table:', error.message);
+  } else {
+    console.log('Successfully connected to Participants table. Data:', data);
+  }
+}
 
-// Required for __dirname in ES module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Serve static files (like login.html and JS)
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'login.html'));
-});
-
-app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
-});
+testDatabaseConnection();
