@@ -2755,6 +2755,11 @@ a.contact-link:hover {
   
 }
 
+.textpara {
+
+  align-self: center;
+}
+
 .umh-logo-submit {
   align-self: center;
   margin-top: -80px; /* Move logo higher */
