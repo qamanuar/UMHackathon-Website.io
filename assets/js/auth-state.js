@@ -1,6 +1,8 @@
-import { supabase } from '../../supabaseClient.js';
+import { auth } from '../../firebase-config.js';
+import { onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
+
+document.addEventListener('DOMContentLoaded', () => {
   const loggedInSection = document.getElementById('logged-in');
   const loggedInSubmission = document.getElementById('logged-in-submission');
   const loggedOutSection = document.getElementById('logged-out');
@@ -8,19 +10,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   const userEmail = document.getElementById('user-email');
   const signOutButton = document.getElementById('sign-out-button');
 
-  async function checkAuth() {
-    const { data: { user } } = await supabase.auth.getUser();
-    updateUI(user);
-  }
-
+  // Function to update UI based on authentication state
   function updateUI(user) {
     if (user) {
+      // User is signed in
       loggedInSection.classList.remove('d-none');
       loggedInSubmission.classList.remove('d-none');
       logoutButton.classList.remove('d-none');
       loggedOutSection.classList.add('d-none');
-      userEmail.textContent = user.email;
+      userEmail.textContent = user.email; // Display user's email
     } else {
+      // User is signed out
       loggedInSection.classList.add('d-none');
       loggedInSubmission.classList.add('d-none');
       logoutButton.classList.add('d-none');
@@ -28,19 +28,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  checkAuth();
-
-  supabase.auth.onAuthStateChange((event, session) => {
-    updateUI(session?.user);
+  // Listen for authentication state changes
+  auth.onAuthStateChanged((user) => {
+    updateUI(user);
   });
 
+  // Sign out functionality
   signOutButton.addEventListener('click', async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      alert('Sign out failed: ' + error.message);
-    } else {
+    try {
+      await signOut(auth); // Sign out the user
       console.log('User signed out successfully');
-      window.location.href = './';
+      window.location.href = './'; // Redirect to the homepage
+    } catch (error) {
+      console.error('Sign out error:', error.message);
+      alert('Sign out failed: ' + error.message);
     }
   });
 });
