@@ -18,3 +18,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// window.addEventListener("scroll", () => {
+//     console.log("Scrolling detected! Y:", window.scrollY);
+// });
+
+document.querySelector(".go-top").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.querySelector(".go-top");
+
+    if (!backToTopButton) return; // Prevent errors if button doesn't exist
+
+    const showOnPx = 400;
+
+    // Show/hide button on scroll
+    document.addEventListener("scroll", () => {
+        if ( window.scrollY> showOnPx) {
+            backToTopButton.classList.remove("hidden");
+        } else {
+            backToTopButton.classList.add("hidden");
+        }
+    });
+
+    // Click to scroll smoothly to top
+    backToTopButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
