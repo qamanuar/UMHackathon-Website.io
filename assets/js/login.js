@@ -1,5 +1,6 @@
 
-import { auth } from '../../firebase-config.js';
+import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+import { auth, db } from '../../firebase-config.js';
 import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
 // Add event listener for login button
@@ -10,10 +11,22 @@ document.querySelector('.login-btn').addEventListener('click', async function(ev
 
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        // console.log('User signed in:', userCredential.user.email);
+        const user = userCredential.user; // ✅ Make sure this line exists!
 
         // Store user email in session storage
         sessionStorage.setItem('userEmail', userCredential.user.email);
+
+        const hasSubmittedRef = doc(db, "hasSubmitted", user.uid);
+        const docSnap = await getDoc(hasSubmittedRef);
+
+        if (!docSnap.exists()) {
+            await setDoc(hasSubmittedRef, {
+                submitted: false,
+                email: user.email,
+                timestamp: new Date()
+            });
+            console.log("hasSubmitted doc created with submitted: false");
+        }
 
         // Redirect to dashboard
         window.location.href = './';

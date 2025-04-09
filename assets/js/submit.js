@@ -1,107 +1,118 @@
-import { collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+import { collection, addDoc, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 import { auth, db } from '../../firebase-config.js';
 
-// Redirect to login page if user is not signed in
-auth.onAuthStateChanged((user) => {
-  if (!user) {
-    window.location.href = "/login";
-  }
-});
 
-// Form submission handling
-document.addEventListener("DOMContentLoaded", async function () {
-  const submitBtn = document.querySelector(".submit-btn");
 
-  // Check if submit button was hidden previously
-  if (localStorage.getItem('submitHidden') === 'true') {
-    submitBtn.style.display = 'none';
-  }
+  document.addEventListener("DOMContentLoaded", async function () {
 
-  submitBtn.addEventListener("click", async function (event) {
-    event.preventDefault(); // prevent form reload
+    auth.onAuthStateChanged(async (user) => {
+      if (!user) {
+        window.location.href = "/login";
+        return;
+      }
+      
+    const submitBtn = document.querySelector(".submit-btn");
 
-    const groupName = document.querySelector(".group-name-input").value.trim();
-    const gdriveLink = document.querySelector(".link-input").value.trim();
-    const domainNum = document.querySelector(".domain-input").value.trim();
-    const user = auth.currentUser;
+    // Check hasSubmitted from Firestore
+    const hasSubmittedRef = doc(db, "hasSubmitted", user.uid);
+    const docSnap = await getDoc(hasSubmittedRef);
 
-    if (groupName === "" || gdriveLink === "" || domainNum === "") {
-      alert("Please fill in all fields.");
-      return;
-    }
-
-    if (!user) {
-      alert("User not authenticated.");
-      return;
-    }
-
-    try {
-      await addDoc(collection(db, "submissions"), {
-        group: groupName,
-        link: gdriveLink,
-        domain: domainNum,
-        email: user.email,
-        timestamp: new Date()
-      });
-
-      // Hide the button and store the state in localStorage
+    if (docSnap.exists() && docSnap.data().submitted === true) {
+      // Hide button and show thank you
       submitBtn.style.display = "none";
-      localStorage.setItem('submitHidden', 'true');  // Store the state
 
-      // Create and show thank you message
       const thankYouMessage = document.createElement("div");
       thankYouMessage.textContent = "Thank you for submitting!";
       thankYouMessage.className = "thank-you-message";
       thankYouMessage.style.marginTop = "10px";
       thankYouMessage.style.fontWeight = "bold";
       thankYouMessage.style.color = "#FFFFFF";
-      thankYouMessage.style.textAlign = "center"; // Horizontal centering
+      thankYouMessage.style.textAlign = "center";
 
       submitBtn.parentNode.appendChild(thankYouMessage);
-
-      // Clear form fields
-      document.querySelector(".group-name-input").value = "";
-      document.querySelector(".link-input").value = "";
-      document.querySelector(".domain-input").value = "";
-    } catch (error) {
-      console.error("Error submitting data: ", error);
-      alert("Submission failed. Please try again.");
+      return;
     }
-  });
 
-  // Dropdown filtering and other event listeners (same as before)
-  const dropdownList = document.getElementById("dropdown_list");
-  const dropdownItems = document.getElementsByClassName("dropdown_item");
-  const submitGroupnameInput = document.getElementById("submit-groupname-input");
+    // Allow submission if not submitted yet
+    submitBtn.addEventListener("click", async function (event) {
+      event.preventDefault();
 
-  submitGroupnameInput.addEventListener("focusin", function () {
-    document.getElementById("dropdown_list").classList.add("show");
-  });
-  submitGroupnameInput.addEventListener("focusout", function () {
-    setTimeout(() => {
-      document.getElementById("dropdown_list").classList.remove("show");
-    }, 200);
-  });
+      const groupName = document.querySelector(".group-name-input").value.trim();
+      const gdriveLink = document.querySelector(".link-input").value.trim();
+      const domainNum = document.querySelector(".domain-input").value.trim();
 
-  submitGroupnameInput.addEventListener("input", searchGroupname);
-
-  function searchGroupname() {
-    const filter = submitGroupnameInput.value.toLowerCase();
-    for (let i = 0; i < dropdownItems.length; i++) {
-      let item = dropdownItems[i];
-      let txtValue = item.textContent || item.innerText;
-      if (txtValue.toLowerCase().indexOf(filter) > -1) {
-        item.style.display = "";
-      } else {
-        item.style.display = "none";
+      if (groupName === "" || gdriveLink === "" || domainNum === "") {
+        alert("Please fill in all fields.");
+        return;
       }
-    }
-  }
 
-  // Select groupname from dropdown list
-  Array.from(dropdownItems).forEach(item => {
-    item.onclick = function () {
-      document.getElementById("submit-groupname-input").value = item.innerHTML;
-    };
+      try {
+        // Submit to "submissions" collection
+        await addDoc(collection(db, "submissions"), {
+          group: groupName,
+          link: gdriveLink,
+          domain: domainNum,
+          email: user.email,
+          timestamp: new Date()
+        });
+
+        // Mark as submitted in hasSubmitted collection
+        await setDoc(hasSubmittedRef, {
+          submitted: true,
+          email: user.email,
+          timestamp: new Date()
+        });
+
+        // Hide the button and store state
+        submitBtn.style.display = "none";
+        localStorage.setItem('submitHidden', 'true');
+
+        const thankYouMessage = document.createElement("div");
+        thankYouMessage.textContent = "Thank you for submitting!";
+        thankYouMessage.className = "thank-you-message";
+        thankYouMessage.style.marginTop = "10px";
+        thankYouMessage.style.fontWeight = "bold";
+        thankYouMessage.style.color = "#FFFFFF";
+        thankYouMessage.style.textAlign = "center";
+        submitBtn.parentNode.appendChild(thankYouMessage);
+
+        // Clear form fields
+        document.querySelector(".group-name-input").value = "";
+        document.querySelector(".link-input").value = "";
+        document.querySelector(".domain-input").value = "";
+      } catch (error) {
+        console.error("Error submitting data: ", error);
+        alert("Submission failed. Please try again.");
+      }
+    });
+
+    // Rest of your dropdown filtering logic
+    const dropdownList = document.getElementById("dropdown_list");
+    const dropdownItems = document.getElementsByClassName("dropdown_item");
+    const submitGroupnameInput = document.getElementById("submit-groupname-input");
+
+    submitGroupnameInput.addEventListener("focusin", function () {
+      document.getElementById("dropdown_list").classList.add("show");
+    });
+    submitGroupnameInput.addEventListener("focusout", function () {
+      setTimeout(() => {
+        document.getElementById("dropdown_list").classList.remove("show");
+      }, 200);
+    });
+
+    submitGroupnameInput.addEventListener("input", function () {
+      const filter = submitGroupnameInput.value.toLowerCase();
+      for (let i = 0; i < dropdownItems.length; i++) {
+        let item = dropdownItems[i];
+        let txtValue = item.textContent || item.innerText;
+        item.style.display = txtValue.toLowerCase().includes(filter) ? "" : "none";
+      }
+    });
+
+    Array.from(dropdownItems).forEach(item => {
+      item.onclick = function () {
+        document.getElementById("submit-groupname-input").value = item.innerHTML;
+      };
+    });
   });
 });
