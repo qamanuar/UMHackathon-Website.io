@@ -2835,8 +2835,8 @@ a.contact-link:hover {
 }
 
 #submit-groupname-input:focus, #submit-groupname-input:active {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  /* border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0; */
   transition: border-bottom-right-radius border-bottom-left-radius 0.2s ease;
 }
 
