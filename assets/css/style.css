@@ -1076,16 +1076,6 @@ body {
   margin-bottom: 100px;
 }
 
-.prizepool_award {
-  display: grid;
-  justify-items: center;
-  width: 200px;
-  height: 200px;
-  font-size: 1.75rem;
-  font-weight: 600;
-  gap: 15px;
-}
-
 .prizepool_award .amount_first {
   /* background-color: gold; */
   text-shadow: gold 1px 0 10px;
@@ -1102,26 +1092,27 @@ body {
 }
 
 .prizepool_award {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: none;
 }
 
 .prizepool_award.first img {
-  width: 200px;
-  height: 200px;
+  width: 330px;
+  height: 300px;
 }
 
 .prizepool_award.second img {
-  width: 180px;
-  height: 180px;
+  width: 290px;
+  height: 260px;
 }
 
 .prizepool_award.third img {
-  width: 160px;
-  height: 160px;
+  width: 250px;
+  height: 220px;
+}
+
+.prizepool_award.fourFifth img {
+  width: 230px;
+  height: 200px;
 }
 
 .milestone_title {
@@ -1279,6 +1270,15 @@ span.text {
 }
 
 @media screen and (max-width: 600px) {
+  .prizepool_award {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .allPrize{
+    display: none;
+  }
   .prizepool_section {
     display: flex;
     flex-direction: column;
@@ -1295,18 +1295,6 @@ span.text {
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
     box-orient: vertical;
-  }
-  #diamond {
-    -webkit-box-ordinal-group: 1;
-    -moz-box-ordinal-group: 1;
-  }
-  #gold {
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-  }
-  #silver {
-    -webkit-box-ordinal-group: 3;
-    -moz-box-ordinal-group: 3;
   }
   .milestone {
     width: 150px;
