@@ -3042,7 +3042,7 @@ body {
   z-index: -1;
   width: 75%;  
   left: 25rem;
-  top: 70rem; 
+  bottom: -90rem; 
   /* border-radius: 10px; */
 }
 .item3 img {
