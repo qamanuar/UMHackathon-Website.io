@@ -68,7 +68,7 @@ import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-w
           // Hide the button and store state
           // submitBtn.style.display = "none";
           localStorage.setItem('submitHidden', 'true');
-
+ 
           const submitForm = document.getElementById("submitForm");
           const submitted = document.getElementById("submitted");
           const tickAnimation = document.getElementById("tick-animation");
@@ -79,6 +79,14 @@ import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-w
           const lottieAnimation = document.createElement("canvas");
           lottieAnimation.id = "lottie-animation";
           tickAnimation.appendChild(lottieAnimation);
+
+          new DotLottie({
+            autoplay: true,
+            loop: false,
+            canvas: document.getElementById("lottie-animation"),
+            src: "https://lottie.host/986e923e-ace0-424b-8554-c626b2fc1464/axpQpkya0p.lottie", // Replace with your animation URL
+          });
+
           // const thankYouMessage = document.createElement("div");
           // thankYouMessage.textContent = "Thank you for submitting!";
           // thankYouMessage.className = "thank-you-message";
@@ -125,14 +133,6 @@ import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-w
         item.onclick = function () {
           document.getElementById("submit-groupname-input").value = item.innerHTML;
         };
-      });
-
-
-      new DotLottie({
-        autoplay: true,
-        loop: false,
-        canvas: document.getElementById("lottie-animation"),
-        src: "https://lottie.host/986e923e-ace0-424b-8554-c626b2fc1464/axpQpkya0p.lottie", // Replace with your animation URL
       });
     });
   });
