@@ -22,10 +22,10 @@ auth.onAuthStateChanged(async (user) => {
 
     submission.addEventListener('click', async function () {
         // Check hasSubmitted from Firestore
-        const hasSubmittedRef = doc(db, "hasSubmitted", user.uid);
+        const hasSubmittedRef = doc(db, "HasSubmitted", user.uid);
         const docSnap = await getDoc(hasSubmittedRef);
 
-        if (docSnap.exists() && docSnap.data().submitted === true) {
+        if (docSnap.exists() && docSnap.data().Submitted === true) {
             window.location.href = "/submitted";
         } else {
             window.location.href = "/submission";
