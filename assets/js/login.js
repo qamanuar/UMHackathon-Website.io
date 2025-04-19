@@ -16,13 +16,13 @@ document.querySelector('.login-btn').addEventListener('click', async function(ev
         // Store user email in session storage
         sessionStorage.setItem('userEmail', userCredential.user.email);
 
-        const hasSubmittedRef = doc(db, "hasSubmitted", user.uid);
+        const hasSubmittedRef = doc(db, "HasSubmitted", user.uid);
         const docSnap = await getDoc(hasSubmittedRef);
 
         if (!docSnap.exists()) {
             await setDoc(hasSubmittedRef, {
-                submitted: false,
-                email: user.email,
+                Submitted: false,
+                Email: user.email,
                 timestamp: new Date()
             });
             console.log("hasSubmitted doc created with submitted: false");

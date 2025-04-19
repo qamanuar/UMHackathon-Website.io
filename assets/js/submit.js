@@ -14,10 +14,10 @@ import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-w
       const submitBtn = document.querySelector(".submit-btn");
 
       // Check hasSubmitted from Firestore
-      const hasSubmittedRef = doc(db, "hasSubmitted", user.uid);
+      const hasSubmittedRef = doc(db, "HasSubmitted", user.uid);
       const docSnap = await getDoc(hasSubmittedRef);
 
-      if (docSnap.exists() && docSnap.data().submitted === true) {
+      if (docSnap.exists() && docSnap.data().Submitted === true) {
         window.location.href = "/submitted";
 
         // // Hide button and show thank you
@@ -60,8 +60,8 @@ import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-w
 
           // Mark as submitted in hasSubmitted collection
           await setDoc(hasSubmittedRef, {
-            submitted: true,
-            email: user.email,
+            Submitted: true,
+            Email: user.email,
             timestamp: new Date()
           });
 
