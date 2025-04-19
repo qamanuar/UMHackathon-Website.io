@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Have Submitted</title>
+
+    <link rel="icon" href="assets\images\umh25-logo.png" type="image/png" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.3.0/css/all.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="selectDisable outer-container-submit">
+        <a href="./" class="umh-web-link">
+            <img class="umh-logo-submit" src="./assets/images/umh-logo2025-white-cropped.png" alt="UMH logo" height="10"/>
+        </a>
+        <div id="submitted" class="submitted selectDisable"> 
+            <!-- Canvas element for the Lottie animation -->
+            <div>
+                <canvas id="lottie-animation"></canvas>
+            </div>
+            
+            <h1 class="form-item-submit form-title textpara m-3">You have already Submitted!</h1>
+            <p class="textpara">Thank you.</p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
+        
+        new DotLottie({
+            autoplay: true,
+            loop: false,
+            canvas: document.getElementById("lottie-animation"),
+            src: "https://lottie.host/986e923e-ace0-424b-8554-c626b2fc1464/axpQpkya0p.lottie", // Replace with your animation URL
+        });
+    </script>
+</body>
+</html>
