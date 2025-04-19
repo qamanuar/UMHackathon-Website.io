@@ -89,7 +89,7 @@ body {
   padding: 0%;
   overflow-x: clip;
   overflow-y: auto !important; /* Ensures scrolling is enabled */
-  overflow: auto; /* Allows scrolling */
+  /* overflow: auto; Allows scrolling */
 }
 
 /* Predefined value for the body margin  */
@@ -3004,7 +3004,7 @@ a.contact-link:hover {
 /*===================================== MERCHANDISE PAGE =====================================*/
 body {
  
-  padding: 5rem;
+  /* padding: 5rem; */
   
 }
 .background {
