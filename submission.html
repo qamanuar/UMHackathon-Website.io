@@ -23,7 +23,7 @@
         <a href="./" class="umh-web-link">
             <img class="umh-logo-submit" src="./assets/images/umh-logo2025-white-cropped.png" alt="UMH logo" height="10"/>
         </a>
-        <div class="submit-form submit-form2">
+        <div id="submitForm" class="submit-form submit-form2 z-idx-0">
             <div class="form-box-submit">
                 <h1 class="form-item-submit form-title-submit">PRELIMINARY SUBMISSION</h1>
                 <p1 class="textpara">You can only submit once</p1>
@@ -43,6 +43,14 @@
                 </div>
                 <button class="submit-btn form-item-submit" type="submit">Submit</button>
             </div>
+        </div>
+
+        <div id="submitted" class="submitted selectDisable z-idx-1 d-none"> 
+            <!-- Canvas element for the Lottie animation -->
+            <div id="tick-animation"></div>
+
+            <h1 class="form-item-submit form-title textpara m-3">Thank you!</h1>
+            <p class="textpara">Your Submission have been saved.</p>
         </div>
 
     </div>

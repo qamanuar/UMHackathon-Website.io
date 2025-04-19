@@ -8,7 +8,30 @@ function scroll_header() {
     }
 }
 window.addEventListener('scroll', scroll_header);
-document.addEventListener('DOMContentLoaded', loadMediaPartner);
+document.addEventListener('DOMContentLoaded', () => {
+    loadMediaPartner();
+});
+
+
+/*============================================================NAVBAR SECTION======================================================================*/
+import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+import { auth, db } from '../../firebase-config.js';
+
+auth.onAuthStateChanged(async (user) => {
+    const submission = document.getElementById('submission');
+
+    submission.addEventListener('click', async function () {
+        // Check hasSubmitted from Firestore
+        const hasSubmittedRef = doc(db, "hasSubmitted", user.uid);
+        const docSnap = await getDoc(hasSubmittedRef);
+
+        if (docSnap.exists() && docSnap.data().submitted === true) {
+            window.location.href = "/submitted";
+        } else {
+            window.location.href = "/submission";
+        }
+    });
+});
 
 /*===========================================================OVERVIEW AND MILESTONE SECTION===============================================*/
 let valueDisplays = document.querySelectorAll('.num');
